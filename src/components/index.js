@@ -1,1 +1,5 @@
-export { default } from './Navbar/Navbar'
+export { default as Navbar } from './Navbar/Navbar'
+export { OrangeButton } from './OrangeButton'
+export { CardTitle } from './CardTitle'
+export { DefaultCard } from './DefaultCard'
+export { Tabs } from './Tabs'
