@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+	display: flex;
 	position: relative;
 	line-height: 120px;
 `
@@ -15,6 +16,7 @@ const Title = styled.h3`
 	translate: -50% -50%;
 	margin: 5px;
 	line-height: 32px;
+	white-space: nowrap;
 `
 
 const TitleShadow = styled.h2`
@@ -29,7 +31,9 @@ const CardTitle = ({ title, titleShadow }) => {
 	return (
 		<Wrapper>
 			<TitleShadow>{titleShadow ?? title}</TitleShadow>
-			<Title>{title}</Title>
+			<Title titleShadow={titleShadow} title={title}>
+				{title}
+			</Title>
 		</Wrapper>
 	)
 }

@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import styled from 'styled-components'
+
+import { MASTERS } from '@/constants/Masters.constants'
 
 const SessionWrapper = styled.div`
 	width: 100%;
@@ -10,7 +13,7 @@ const SessionWrapper = styled.div`
 const SessionHeader = styled.div`
 	display: flex;
 	align-items: center;
-	gap: 170px;
+	gap: 140px;
 	padding: 11px 16px;
 	background-color: #f8f8f8;
 	border-radius: 12px;
@@ -31,7 +34,8 @@ const SessionTitle = styled.h5`
 	font-family: sans-serif;
 	font-size: 26px;
 	margin: 0;
-	flex: 0.5;
+	width: 210px;
+	white-space: nowrap;
 `
 
 const SessionText = styled.span`
@@ -41,8 +45,8 @@ const SessionText = styled.span`
 
 const SessionInfo = styled.div`
 	display: flex;
-	gap: 235px;
-	padding: 48px 0 72px 48px;
+	gap: 140px;
+	padding: 48px 0 72px 15px;
 `
 
 const SessionDescription = styled.span`
@@ -52,8 +56,25 @@ const SessionDescription = styled.span`
 	white-space: pre-line;
 `
 
+const MastersWrapper = styled.div`
+	display: flex;
+	gap: 25px;
+	min-width: 210px;
+
+	> img {
+		width: 87px;
+		height: 87px;
+	}
+`
+
 const Session = ({ session }) => {
-	const { title, duration, date, description } = session
+	const { title, duration, date, description, masters } = session
+
+	console.log(masters)
+
+	const mastersData = masters.map(master =>
+		MASTERS.find(({ name }) => name.includes(master))
+	)
 
 	return (
 		<SessionWrapper>
@@ -64,6 +85,11 @@ const Session = ({ session }) => {
 				<SessionText>Watch Video </SessionText>
 			</SessionHeader>
 			<SessionInfo>
+				<MastersWrapper>
+					{mastersData?.map(({ picture, name }) => (
+						<Image key={name} src={picture} alt={name} />
+					))}
+				</MastersWrapper>
 				<SessionDescription>{description}</SessionDescription>
 			</SessionInfo>
 		</SessionWrapper>

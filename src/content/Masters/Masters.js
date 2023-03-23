@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import { CardTitle, DefaultCard } from '@/components'
 
+import MastersList from './MastersList'
+
 const MastersSection = styled.section`
 	display: flex;
 	justify-content: center;
@@ -17,17 +19,17 @@ const CardContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 71px;
 `
 
 const Masters = () => {
 	return (
-		<MastersSection>
-			<DefaultCard>
-				<CardContent>
-					<CardTitle title='Masters' />
-				</CardContent>
-			</DefaultCard>
-		</MastersSection>
+		<DefaultCard>
+			<CardContent>
+				<CardTitle title='Masters' />
+				<MastersList />
+			</CardContent>
+		</DefaultCard>
 	)
 }
 

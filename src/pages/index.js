@@ -10,6 +10,7 @@ import {
 	CourseExperience,
 	Sessions,
 	Masters,
+	Faq,
 } from '@/content'
 
 import GlobalStyles from './Global.styled'
@@ -48,6 +49,26 @@ const SessionsSection = styled.section`
 	padding: 280px 0 190px;
 `
 
+const MastersSection = styled.section`
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	> div {
+		width: 100%;
+	}
+`
+
+const FaqSection = styled.section`
+	background-color: #fafafa;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 195px;
+	height: 2000px;
+	padding-top: 300px;
+`
+
 export default function Home() {
 	return (
 		<MainContainer>
@@ -63,7 +84,12 @@ export default function Home() {
 			<SessionsSection>
 				<Sessions />
 			</SessionsSection>
-			<Masters />
+			<MastersSection>
+				<Masters />
+			</MastersSection>
+			<FaqSection>
+				<Faq />
+			</FaqSection>
 		</MainContainer>
 	)
 }
