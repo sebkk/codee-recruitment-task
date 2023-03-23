@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import styled from 'styled-components'
 
-import Navbar from 'src/components/Navbar/Navbar'
+import { Navbar, Footer } from '@/components'
 import {
 	ProductDesignCourse,
 	AboutUs,
@@ -12,6 +12,9 @@ import {
 	Masters,
 	Faq,
 	CourseFee,
+	ListOfHeadings,
+	Projects,
+	Schedule,
 } from '@/content'
 
 import GlobalStyles from './Global.styled'
@@ -27,33 +30,53 @@ const HeaderSection = styled.section`
 	align-items: center;
 	padding-top: 50px;
 	gap: 50px;
-	height: 780px;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 1) 85%,
+		rgba(250, 250, 250, 1) 85%
+	);
 
 	> * {
 		max-width: 1460px;
 	}
 `
 
-const SecondSection = styled.section`
+const AboutUsSection = styled.section`
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 125px;
+	justify-content: center;
+	position: relative;
+	padding: 290px 0 120px;
 	background-color: #fafafa;
-	height: 1535px;
-	padding-top: 268px;
+`
+
+const CourseExperienceSection = styled.section`
+	display: flex;
+	justify-content: center;
+	background: rgb(250, 250, 250);
+	background: linear-gradient(
+		180deg,
+		rgba(250, 250, 250, 1) 50%,
+		rgba(255, 255, 255, 1) 50%
+	);
 `
 
 const SessionsSection = styled.section`
 	display: flex;
 	justify-content: center;
-	padding: 280px 0 190px;
+	padding: 160px 0 190px;
 `
 
 const MastersSection = styled.section`
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	background: rgb(250, 250, 250);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(250, 250, 250, 1) 50%
+	);
+	padding-bottom: 50px;
 
 	> div {
 		width: 100%;
@@ -88,6 +111,28 @@ const CourseFeeSection = styled.section`
 	}
 `
 
+const ListOfHeadingsSection = styled.section`
+	background-color: #000000;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 135px 0;
+`
+
+const ProjectsSection = styled.section`
+	display: flex;
+	justify-content: center;
+	padding: 143px 0;
+`
+
+const ScheduleSection = styled.section`
+	display: flex;
+	justify-content: center;
+	padding: 140px 0 115px;
+	background-color: #fafafa;
+	width: 100%;
+`
+
 export default function Home() {
 	return (
 		<MainContainer>
@@ -96,10 +141,12 @@ export default function Home() {
 				<Navbar />
 				<ProductDesignCourse />
 			</HeaderSection>
-			<SecondSection>
+			<AboutUsSection>
 				<AboutUs />
+			</AboutUsSection>
+			<CourseExperienceSection>
 				<CourseExperience />
-			</SecondSection>
+			</CourseExperienceSection>
 			<SessionsSection>
 				<Sessions />
 			</SessionsSection>
@@ -112,6 +159,16 @@ export default function Home() {
 			<CourseFeeSection>
 				<CourseFee />
 			</CourseFeeSection>
+			<ListOfHeadingsSection>
+				<ListOfHeadings />
+			</ListOfHeadingsSection>
+			<ProjectsSection>
+				<Projects />
+			</ProjectsSection>
+			<ScheduleSection>
+				<Schedule />
+			</ScheduleSection>
+			<Footer />
 		</MainContainer>
 	)
 }

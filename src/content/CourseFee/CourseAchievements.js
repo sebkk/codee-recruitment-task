@@ -9,7 +9,7 @@ const ListHeader = styled.h5`
 	margin: 10px 0 0;
 `
 
-const List = styled.ul`
+export const List = styled.ul`
 	list-style: none;
 	padding-left: 0;
 `

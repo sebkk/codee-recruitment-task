@@ -2,6 +2,8 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 import { MASTERS } from '@/constants/Masters.constants'
+import { ClockIcon, CalendarIcon, BlackPlayIcon } from '@/components/icons'
+import { IconButton } from '@/components'
 
 const SessionWrapper = styled.div`
 	width: 100%;
@@ -41,6 +43,9 @@ const SessionTitle = styled.h5`
 const SessionText = styled.span`
 	font-family: sans-serif;
 	font-size: 19px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
 `
 
 const SessionInfo = styled.div`
@@ -70,8 +75,6 @@ const MastersWrapper = styled.div`
 const Session = ({ session }) => {
 	const { title, duration, date, description, masters } = session
 
-	console.log(masters)
-
 	const mastersData = masters.map(master =>
 		MASTERS.find(({ name }) => name.includes(master))
 	)
@@ -80,9 +83,17 @@ const Session = ({ session }) => {
 		<SessionWrapper>
 			<SessionHeader>
 				<SessionTitle>{title}</SessionTitle>
-				<SessionText>Duration: {duration}</SessionText>
-				<SessionText>Date: {date}</SessionText>
-				<SessionText>Watch Video </SessionText>
+				<SessionText>
+					<ClockIcon /> Duration: {duration}
+				</SessionText>
+				<SessionText>
+					<CalendarIcon /> Date: {date}
+				</SessionText>
+				<IconButton href='https://www.google.pl/'>
+					<SessionText>
+						<BlackPlayIcon /> Watch Video
+					</SessionText>
+				</IconButton>
 			</SessionHeader>
 			<SessionInfo>
 				<MastersWrapper>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 
+import UiuxPicture from '@/pictures/UiuxPicture.png'
 import { OrangeButton, DefaultCard } from '@/components'
 import ProductDesignCoursePicture from '@/pictures/ProductDesignCoursePicture.png'
 
@@ -43,12 +44,36 @@ const HeaderTypography = styled.h1`
 	font-family: sans-serif;
 `
 
+const TitleWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+`
+
+const ImageWrapper = styled.div`
+	position: relative;
+`
+
+const SubheaderTypography = styled.h3`
+	position: absolute;
+	margin: 28px 0 0;
+	font-size: 38px;
+	font-family: sans-serif;
+	color: #8d8d8d;
+	font-weight: normal;
+`
+
 const ProductDesignCourse = () => {
 	return (
 		<DefaultCard>
 			<Wrapper>
 				<SideWrapper>
-					<HeaderTypography>Product Design Course</HeaderTypography>
+					<TitleWrapper>
+						<HeaderTypography>Product Design Course</HeaderTypography>
+						<ImageWrapper>
+							<SubheaderTypography>Product Factory</SubheaderTypography>
+							<Image src={UiuxPicture} alt='ui/ux' />
+						</ImageWrapper>
+					</TitleWrapper>
 					<span>
 						Learn how design thinking, user research, business vision and
 						marketing, and finally designing and creating real digital products

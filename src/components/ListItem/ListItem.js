@@ -6,13 +6,14 @@ const Item = styled.li`
 	line-height: 28px;
 	padding-left: 40px;
 	position: relative;
-	margin-top: 45px;
+	margin: ${({ margin }) => margin || '45px 0 0'};
 
 	&:before {
 		content: '';
 		position: absolute;
 		left: 0;
-		top: 0px;
+		top: 30%;
+		translate: 0 -30%;
 		width: 27px;
 		height: 27px;
 		background-repeat: no-repeat;
@@ -20,6 +21,8 @@ const Item = styled.li`
 	}
 `
 
-const ListItem = ({ children }) => <Item>{children}</Item>
+const ListItem = ({ children, margin }) => (
+	<Item margin={margin}>{children}</Item>
+)
 
 export default ListItem
