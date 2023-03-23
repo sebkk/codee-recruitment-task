@@ -119,7 +119,7 @@ const AboutUs = () => (
 					</CardWrapper>
 					<TitleWrapper>
 						<CardTitle title='About us' titleShadow='About' />
-						<SocialIconButtonsGroup orientationHorizontal />
+						<SocialIconButtonsGroup orientationVertical />
 					</TitleWrapper>
 				</TopWrapper>
 				<AboutParagraph>

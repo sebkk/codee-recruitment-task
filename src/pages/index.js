@@ -89,7 +89,7 @@ const FaqSection = styled.section`
 	flex-direction: column;
 	align-items: center;
 	gap: 50px;
-	padding: 100px 0 175px;
+	padding: 100px 0;
 	width: 100%;
 `
 
@@ -103,7 +103,7 @@ const CourseFeeSection = styled.section`
 		rgba(250, 250, 250, 1) 50%,
 		rgba(255, 255, 255, 1) 50%
 	);
-	padding: 90px 0 90px;
+	padding: 90px 0 165px;
 	width: 100%;
 
 	> div {
@@ -116,7 +116,6 @@ const ListOfHeadingsSection = styled.section`
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	padding: 135px 0;
 `
 
 const ProjectsSection = styled.section`

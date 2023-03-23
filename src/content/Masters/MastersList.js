@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 75px 40px;
+	gap: 75px 70px;
 `
 
 const MastersList = () => (

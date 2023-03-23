@@ -29,7 +29,6 @@ const SideWrapper = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	/* flex: 0.5; */
 
 	> span {
 		font-size: 23px;

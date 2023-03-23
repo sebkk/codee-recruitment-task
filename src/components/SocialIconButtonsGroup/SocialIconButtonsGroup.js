@@ -32,7 +32,7 @@ const SOCIAL_BUTTONS = [
 	},
 ]
 
-const SocialIconButtonsGroup = ({ orientationVertical = true }) => (
+const SocialIconButtonsGroup = ({ orientationVertical = false }) => (
 	<Wrapper orientationVertical={orientationVertical}>
 		{SOCIAL_BUTTONS.map(({ icon, social, href }) => (
 			<IconButton key={social} href={href}>

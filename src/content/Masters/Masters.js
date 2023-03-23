@@ -24,7 +24,7 @@ const CardContent = styled.div`
 
 const Masters = () => {
 	return (
-		<DefaultCard>
+		<DefaultCard padding='92px 78px 74px'>
 			<CardContent>
 				<CardTitle title='Masters' />
 				<MastersList />
