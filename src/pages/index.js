@@ -11,6 +11,7 @@ import {
 	Sessions,
 	Masters,
 	Faq,
+	CourseFee,
 } from '@/content'
 
 import GlobalStyles from './Global.styled'
@@ -64,9 +65,27 @@ const FaqSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 195px;
-	height: 2000px;
-	padding-top: 300px;
+	gap: 50px;
+	padding: 100px 0 175px;
+	width: 100%;
+`
+
+const CourseFeeSection = styled.section`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(250, 250, 250);
+	background: linear-gradient(
+		180deg,
+		rgba(250, 250, 250, 1) 50%,
+		rgba(255, 255, 255, 1) 50%
+	);
+	padding: 90px 0 90px;
+	width: 100%;
+
+	> div {
+		width: 100%;
+	}
 `
 
 export default function Home() {
@@ -90,6 +109,9 @@ export default function Home() {
 			<FaqSection>
 				<Faq />
 			</FaqSection>
+			<CourseFeeSection>
+				<CourseFee />
+			</CourseFeeSection>
 		</MainContainer>
 	)
 }

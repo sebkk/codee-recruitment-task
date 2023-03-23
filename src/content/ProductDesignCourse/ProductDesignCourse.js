@@ -7,6 +7,20 @@ import ProductDesignCoursePicture from '@/pictures/ProductDesignCoursePicture.pn
 const Wrapper = styled.div`
 	display: flex;
 	gap: 80px;
+
+	> div:last-of-type {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> img {
+			/* width: auto; */
+			/* height: auto; */
+			/* max-width: 530px; */
+			/* max-height: 570px; */
+			/* object-fit: scale-down; */
+		}
+	}
 `
 
 const SideWrapper = styled.div`
@@ -14,7 +28,7 @@ const SideWrapper = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	flex: 1;
+	/* flex: 0.5; */
 
 	> span {
 		font-size: 23px;
@@ -42,10 +56,12 @@ const ProductDesignCourse = () => {
 					</span>
 					<OrangeButton text='Start Register' />
 				</SideWrapper>
-				<Image
-					src={ProductDesignCoursePicture}
-					alt='Product Design Course Picture'
-				/>
+				<div>
+					<Image
+						src={ProductDesignCoursePicture}
+						alt='Product Design Course Picture'
+					/>
+				</div>
 			</Wrapper>
 		</DefaultCard>
 	)

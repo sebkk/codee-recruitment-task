@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ButtonStyled = styled.button`
 	cursor: pointer;
 	background-color: #f46632;
-	padding: 24px 116px;
+	padding: ${({ padding }) => padding || '24px 116px'};
 	color: #ffffff;
 	border-radius: 16px;
 	border: none;
@@ -11,8 +11,10 @@ const ButtonStyled = styled.button`
 	font-weight: bold;
 `
 
-const OrangeButton = ({ onClick, text }) => (
-	<ButtonStyled onClick={onClick}>{text}</ButtonStyled>
+const OrangeButton = ({ onClick, text, padding }) => (
+	<ButtonStyled padding={padding} onClick={onClick}>
+		{text}
+	</ButtonStyled>
 )
 
 export default OrangeButton

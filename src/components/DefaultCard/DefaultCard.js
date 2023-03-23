@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const Card = styled.div`
-	background-color: ${({ isBlack }) => (isBlack ? 'black' : '#ffffff')};
-	padding: ${({ padding }) => padding};
+	background-color: #ffffff;
+	padding: ${({ padding }) => padding || '110px 140px'};
 	border-radius: 30px;
 	max-width: 1460px;
 	display: flex;
@@ -10,16 +10,8 @@ const Card = styled.div`
 	filter: drop-shadow(5px 5px 20px rgba(34, 34, 34, 0.06));
 `
 
-const DefaultCard = ({
-	children,
-	padding = '110px 140px',
-	isBlack = false,
-}) => {
-	return (
-		<Card isBlack={isBlack} padding={padding}>
-			{children}
-		</Card>
-	)
+const DefaultCard = ({ children, padding }) => {
+	return <Card padding={padding}>{children}</Card>
 }
 
 export default DefaultCard
