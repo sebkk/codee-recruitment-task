@@ -4,14 +4,32 @@ import { DefaultCard, CardTitle, BlackCard, OrangeButton } from '@/components'
 
 import CourseAchievements from './CourseAchievements'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(250, 250, 250);
+	background: linear-gradient(
+		180deg,
+		rgba(250, 250, 250, 1) 50%,
+		rgba(255, 255, 255, 1) 50%
+	);
+	padding: 90px 0 165px;
+	width: 100%;
+
+	> div {
+		width: 100%;
+	}
+`
+
+const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	gap: 75px;
 `
 
-const CardContent = styled.div`
+const CardContent = styled.section`
 	display: flex;
 	gap: 30px;
 
@@ -24,7 +42,7 @@ const CardContent = styled.div`
 	}
 `
 
-const CardFooter = styled.div`
+const CardFooter = styled.aside`
 	width: 100%;
 	text-align: center;
 	padding-top: 54px;
@@ -37,7 +55,7 @@ const CardFooter = styled.div`
 	}
 `
 
-const BlackCardContent = styled.div`
+const BlackCardContent = styled.section`
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -66,8 +84,8 @@ const PriceTypography = styled.span`
 	}
 `
 
-const CourseFee = () => {
-	return (
+const CourseFee = () => (
+	<Container>
 		<DefaultCard padding='68px 106px'>
 			<Wrapper>
 				<CardTitle title='Course fee' />
@@ -102,7 +120,7 @@ const CourseFee = () => {
 				</div>
 			</Wrapper>
 		</DefaultCard>
-	)
-}
+	</Container>
+)
 
 export default CourseFee

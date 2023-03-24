@@ -5,14 +5,14 @@ import { MASTERS } from '@/constants/Masters.constants'
 import { ClockIcon, CalendarIcon, BlackPlayIcon } from '@/components/icons'
 import { IconButton } from '@/components'
 
-const SessionWrapper = styled.div`
+const SessionWrapper = styled.section`
 	width: 100%;
 	position: relative;
 	border-left: 2px solid #e8e8e8;
 	padding-left: 20px;
 `
 
-const SessionHeader = styled.div`
+const SessionHeader = styled.section`
 	display: flex;
 	align-items: center;
 	gap: 140px;
@@ -46,7 +46,7 @@ const SessionText = styled.span`
 	gap: 6px;
 `
 
-const SessionInfo = styled.div`
+const SessionInfo = styled.section`
 	display: flex;
 	gap: 140px;
 	padding: 48px 0 72px 15px;
@@ -58,7 +58,7 @@ const SessionDescription = styled.span`
 	white-space: pre-line;
 `
 
-const MastersWrapper = styled.div`
+const MastersWrapper = styled.figure`
 	display: flex;
 	gap: 25px;
 	min-width: 210px;

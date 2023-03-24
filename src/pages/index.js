@@ -23,49 +23,6 @@ const MainContainer = styled.main`
 	width: 100%;
 `
 
-const HeaderSection = styled.section`
-	background-color: #111111;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 50px;
-	gap: 50px;
-	background: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 1) 85%,
-		rgba(250, 250, 250, 1) 85%
-	);
-
-	> * {
-		max-width: 1460px;
-	}
-`
-
-const AboutUsSection = styled.section`
-	display: flex;
-	justify-content: center;
-	position: relative;
-	padding: 290px 0 120px;
-	background-color: #fafafa;
-`
-
-const CourseExperienceSection = styled.section`
-	display: flex;
-	justify-content: center;
-	background: rgb(250, 250, 250);
-	background: linear-gradient(
-		180deg,
-		rgba(250, 250, 250, 1) 50%,
-		rgba(255, 255, 255, 1) 50%
-	);
-`
-
-const SessionsSection = styled.section`
-	display: flex;
-	justify-content: center;
-	padding: 160px 0 190px;
-`
-
 const MastersSection = styled.section`
 	display: flex;
 	justify-content: center;
@@ -134,40 +91,22 @@ const ScheduleSection = styled.section`
 
 export default function Home() {
 	return (
-		<MainContainer>
-			<GlobalStyles />
-			<HeaderSection>
-				<Navbar />
+		<>
+			<Navbar />
+			<MainContainer>
+				<GlobalStyles />
 				<ProductDesignCourse />
-			</HeaderSection>
-			<AboutUsSection>
 				<AboutUs />
-			</AboutUsSection>
-			<CourseExperienceSection>
 				<CourseExperience />
-			</CourseExperienceSection>
-			<SessionsSection>
 				<Sessions />
-			</SessionsSection>
-			<MastersSection>
 				<Masters />
-			</MastersSection>
-			<FaqSection>
 				<Faq />
-			</FaqSection>
-			<CourseFeeSection>
 				<CourseFee />
-			</CourseFeeSection>
-			<ListOfHeadingsSection>
 				<ListOfHeadings />
-			</ListOfHeadingsSection>
-			<ProjectsSection>
 				<Projects />
-			</ProjectsSection>
-			<ScheduleSection>
 				<Schedule />
-			</ScheduleSection>
+			</MainContainer>
 			<Footer />
-		</MainContainer>
+		</>
 	)
 }

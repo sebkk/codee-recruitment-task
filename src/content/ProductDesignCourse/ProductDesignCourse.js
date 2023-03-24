@@ -5,7 +5,25 @@ import UiuxPicture from '@/pictures/UiuxPicture.png'
 import { OrangeButton, DefaultCard } from '@/components'
 import ProductDesignCoursePicture from '@/pictures/ProductDesignCoursePicture.png'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	background-color: #111111;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 160px;
+	gap: 50px;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 1) 85%,
+		rgba(250, 250, 250, 1) 85%
+	);
+
+	> * {
+		max-width: 1460px;
+	}
+`
+
+const Wrapper = styled.section`
 	display: flex;
 	gap: 80px;
 
@@ -24,7 +42,7 @@ const Wrapper = styled.div`
 	}
 `
 
-const SideWrapper = styled.div`
+const SideWrapper = styled.aside`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -42,12 +60,12 @@ const HeaderTypography = styled.h1`
 	margin: 0;
 `
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.section`
 	position: relative;
 `
 
@@ -61,31 +79,31 @@ const SubheaderTypography = styled.h3`
 
 const ProductDesignCourse = () => {
 	return (
-		<DefaultCard>
-			<Wrapper>
-				<SideWrapper>
-					<TitleWrapper>
-						<HeaderTypography>Product Design Course</HeaderTypography>
-						<ImageWrapper>
-							<SubheaderTypography>Product Factory</SubheaderTypography>
-							<Image src={UiuxPicture} alt='ui/ux' />
-						</ImageWrapper>
-					</TitleWrapper>
-					<span>
-						Learn how design thinking, user research, business vision and
-						marketing, and finally designing and creating real digital products
-						for real users.
-					</span>
-					<OrangeButton text='Start Register' />
-				</SideWrapper>
-				<div>
+		<Container>
+			<DefaultCard>
+				<Wrapper>
+					<SideWrapper>
+						<TitleWrapper>
+							<HeaderTypography>Product Design Course</HeaderTypography>
+							<ImageWrapper>
+								<SubheaderTypography>Product Factory</SubheaderTypography>
+								<Image src={UiuxPicture} alt='ui/ux' />
+							</ImageWrapper>
+						</TitleWrapper>
+						<span>
+							Learn how design thinking, user research, business vision and
+							marketing, and finally designing and creating real digital
+							products for real users.
+						</span>
+						<OrangeButton text='Start Register' />
+					</SideWrapper>
 					<Image
 						src={ProductDesignCoursePicture}
 						alt='Product Design Course Picture'
 					/>
-				</div>
-			</Wrapper>
-		</DefaultCard>
+				</Wrapper>
+			</DefaultCard>
+		</Container>
 	)
 }
 

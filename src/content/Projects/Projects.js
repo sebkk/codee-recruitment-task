@@ -5,7 +5,13 @@ import { TODO_APP_LIST } from '@/constants/Projects.constants'
 
 import { List } from '../CourseFee/CourseAchievements'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	display: flex;
+	justify-content: center;
+	padding: 143px 0;
+`
+
+const Wrapper = styled.section`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -14,7 +20,7 @@ const Wrapper = styled.div`
 	gap: 120px;
 `
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.section`
 	width: 100%;
 	display: flex;
 	gap: 160px;
@@ -24,7 +30,7 @@ const ContentWrapper = styled.div`
 	}
 `
 
-const SideWrapper = styled.div`
+const SideWrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -64,7 +70,7 @@ const CarouselCounter = styled.span`
 	margin-top: 90px;
 `
 
-const Carousel = styled.div`
+const Carousel = styled.aside`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -93,14 +99,14 @@ const CarouselCard = styled.div`
 	left: 50%;
 	translate: -50% 0;
 
-	> div {
+	> section {
 		height: 612px;
 		width: 327px;
 	}
 `
 
-const Projects = () => {
-	return (
+const Projects = () => (
+	<Container>
 		<Wrapper>
 			<CardTitle title='Projects' />
 			<ContentWrapper>
@@ -132,7 +138,7 @@ const Projects = () => {
 				</Carousel>
 			</ContentWrapper>
 		</Wrapper>
-	)
-}
+	</Container>
+)
 
 export default Projects

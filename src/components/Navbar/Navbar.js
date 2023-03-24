@@ -3,13 +3,23 @@ import styled from 'styled-components'
 import { NAV_LINKS } from '@/constants/Navbar.constants'
 import { ProductFactoryLogo } from '../icons'
 
-const NavWrapper = styled.nav`
+const Nav = styled.header`
+	width: 100%;
+	position: fixed;
+	background-color: #000000;
+	padding: 52px 20px;
+	display: flex;
+	justify-content: center;
+	z-index: 999;
+`
+
+const NavbarWrapper = styled.nav`
 	color: #ffffff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	/* padding: 0 20px; */
+	max-width: 1460px;
 `
 
 const RegisterButton = styled.button`
@@ -29,13 +39,15 @@ const NavLink = styled.a`
 
 const Navbar = () => {
 	return (
-		<NavWrapper>
-			<ProductFactoryLogo />
-			{NAV_LINKS.map(item => (
-				<NavLink key={item}>{item}</NavLink>
-			))}
-			<RegisterButton>Register</RegisterButton>
-		</NavWrapper>
+		<Nav>
+			<NavbarWrapper>
+				<ProductFactoryLogo />
+				{NAV_LINKS.map(item => (
+					<NavLink key={item}>{item}</NavLink>
+				))}
+				<RegisterButton>Register</RegisterButton>
+			</NavbarWrapper>
+		</Nav>
 	)
 }
 

@@ -5,7 +5,13 @@ import { SESSIONS } from '@/constants/Sessions.constants'
 
 import Session from './Session'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	display: flex;
+	justify-content: center;
+	padding: 160px 0 190px;
+`
+
+const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -14,13 +20,13 @@ const Wrapper = styled.div`
 	width: 100%;
 `
 
-const SessionsWrapper = styled.div`
+const SessionsWrapper = styled.section`
 	width: 100%;
 	max-width: 1380px;
 `
 
-const Sessions = () => {
-	return (
+const Sessions = () => (
+	<Container>
 		<Wrapper>
 			<CardTitle title={'Sessions'} />
 			<SessionsWrapper>
@@ -29,7 +35,7 @@ const Sessions = () => {
 				))}
 			</SessionsWrapper>
 		</Wrapper>
-	)
-}
+	</Container>
+)
 
 export default Sessions

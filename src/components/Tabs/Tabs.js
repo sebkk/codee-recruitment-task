@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-const TabsStyled = styled.div`
+const TabsStyled = styled.aside`
 	display: flex;
 `
 

@@ -15,12 +15,20 @@ import {
 	SquareIcon,
 } from '@/components/icons'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	display: flex;
+	justify-content: center;
+	position: relative;
+	padding: 290px 0 120px;
+	background-color: #fafafa;
+`
+
+const Wrapper = styled.section`
 	display: flex;
 	justify-content: center;
 `
 
-const TopWrapper = styled.div`
+const TopWrapper = styled.section`
 	display: flex;
 	justify-content: space-between;
 	position: relative;
@@ -33,7 +41,7 @@ const AboutParagraph = styled.p`
 	margin: 0;
 `
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.section`
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-start;
@@ -46,7 +54,7 @@ const TitleWrapper = styled.div`
 	}
 `
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.aside`
 	position: absolute;
 	z-index: 10;
 
@@ -95,44 +103,46 @@ const SquareIconWrapper = styled.div`
 `
 
 const AboutUs = () => (
-	<DefaultCard>
-		<Wrapper>
-			<div>
-				<TopWrapper>
-					<CardWrapper>
-						<BlackCard padding='125px 195px'>
-							<ProductFactoryLogo />
-							<WhitePlayIconWrapper>
-								<IconButton href=''>
-									<WhitePlayIcon />
-								</IconButton>
-							</WhitePlayIconWrapper>
-							<SquareIconWrapper>
-								<SquareIcon />
-							</SquareIconWrapper>
-							<LinesWrapper>
-								<CircleLineIcon />
-								<EllipseLineIcon />
-							</LinesWrapper>
-						</BlackCard>
-					</CardWrapper>
-					<TitleWrapper>
-						<CardTitle title='About us' titleShadow='About' />
-						<SocialIconButtonsGroup orientationVertical />
-					</TitleWrapper>
-				</TopWrapper>
-				<AboutParagraph>
-					Today, given the economic and labor market conditions, the best and
-					least risky way to invest is to invest in personal assets and skills.
-					UI / UX Product Design Course covers all aspects of product design
-					from product thinking and design to user-centric research and product
-					research and business vision and digital marketing to product
-					designers and creators, designing the end-user experience and
-					interface of the product and how to deliver it. Includes.
-				</AboutParagraph>
-			</div>
-		</Wrapper>
-	</DefaultCard>
+	<Container>
+		<DefaultCard>
+			<Wrapper>
+				<section>
+					<TopWrapper>
+						<CardWrapper>
+							<BlackCard padding='125px 195px'>
+								<ProductFactoryLogo />
+								<WhitePlayIconWrapper>
+									<IconButton href=''>
+										<WhitePlayIcon />
+									</IconButton>
+								</WhitePlayIconWrapper>
+								<SquareIconWrapper>
+									<SquareIcon />
+								</SquareIconWrapper>
+								<LinesWrapper>
+									<CircleLineIcon />
+									<EllipseLineIcon />
+								</LinesWrapper>
+							</BlackCard>
+						</CardWrapper>
+						<TitleWrapper>
+							<CardTitle title='About us' titleShadow='About' />
+							<SocialIconButtonsGroup orientationVertical />
+						</TitleWrapper>
+					</TopWrapper>
+					<AboutParagraph>
+						Today, given the economic and labor market conditions, the best and
+						least risky way to invest is to invest in personal assets and
+						skills. UI / UX Product Design Course covers all aspects of product
+						design from product thinking and design to user-centric research and
+						product research and business vision and digital marketing to
+						product designers and creators, designing the end-user experience
+						and interface of the product and how to deliver it. Includes.
+					</AboutParagraph>
+				</section>
+			</Wrapper>
+		</DefaultCard>
+	</Container>
 )
 
 export default AboutUs

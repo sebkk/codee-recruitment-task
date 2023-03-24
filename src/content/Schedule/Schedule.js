@@ -2,12 +2,20 @@ import styled from 'styled-components'
 
 import { CardTitle, DefaultCard, OrangeButton } from '@/components'
 
-const Wrapper = styled.div`
+const Container = styled.article`
+	display: flex;
+	justify-content: center;
+	padding: 140px 0 115px;
+	background-color: #fafafa;
+	width: 100%;
+`
+
+const Wrapper = styled.section`
 	width: 100%;
 	max-width: 1460px;
 `
 
-const StepperWrapper = styled.div`
+const StepperWrapper = styled.aside`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -42,12 +50,12 @@ const StepperLine = styled.div`
 	opacity: 0.3;
 `
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.section`
 	display: flex;
 	gap: 96px;
 	margin-bottom: 103px;
 
-	> div {
+	> section {
 		flex: 1;
 		margin: 0;
 	}
@@ -61,7 +69,7 @@ const CardContent = styled.span`
 	width: 100%;
 `
 
-const CountdownWrapper = styled.div`
+const CountdownWrapper = styled.aside`
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -86,31 +94,33 @@ const CountdownTypography = styled.span`
 `
 
 const Schedule = () => (
-	<Wrapper>
-		<CardTitle title='Schedule' />
-		<StepperWrapper>
-			<StepperTypography>Start of course</StepperTypography>
-			<Stepper>
-				<StepperCircle />
-				<StepperLine />
-				<StepperCircle filled />
-			</Stepper>
-			<StepperTypography>End of course</StepperTypography>
-		</StepperWrapper>
-		<CardWrapper>
-			<DefaultCard padding='57px 0px'>
-				<CardContent>2019 / 11 / 11</CardContent>
-			</DefaultCard>
-			<DefaultCard padding='57px 0px'>
-				<CardContent>2019 / 08 / 11</CardContent>
-			</DefaultCard>
-		</CardWrapper>
-		<CountdownWrapper>
-			<Countdown>11</Countdown>
-			<CountdownTypography>Days left to sign up</CountdownTypography>
-			<OrangeButton text='Register' padding='17px 85px' />
-		</CountdownWrapper>
-	</Wrapper>
+	<Container>
+		<Wrapper>
+			<CardTitle title='Schedule' />
+			<StepperWrapper>
+				<StepperTypography>Start of course</StepperTypography>
+				<Stepper>
+					<StepperCircle />
+					<StepperLine />
+					<StepperCircle filled />
+				</Stepper>
+				<StepperTypography>End of course</StepperTypography>
+			</StepperWrapper>
+			<CardWrapper>
+				<DefaultCard padding='57px 0px'>
+					<CardContent>2019 / 11 / 11</CardContent>
+				</DefaultCard>
+				<DefaultCard padding='57px 0px'>
+					<CardContent>2019 / 08 / 11</CardContent>
+				</DefaultCard>
+			</CardWrapper>
+			<CountdownWrapper>
+				<Countdown>11</Countdown>
+				<CountdownTypography>Days left to sign up</CountdownTypography>
+				<OrangeButton text='Register' padding='17px 85px' />
+			</CountdownWrapper>
+		</Wrapper>
+	</Container>
 )
 
 export default Schedule

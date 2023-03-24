@@ -5,7 +5,14 @@ import { ListItem, Input } from '@/components'
 import LetterPicture from '@/pictures/LetterPicture.png'
 import SmallLetterPicture from '@/pictures/SmallLetterPicture.png'
 
-const HeadingsWrapper = styled.div`
+const Container = styled.article`
+	background-color: #000000;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+`
+
+const HeadingsWrapper = styled.section`
 	width: 100%;
 	max-width: 1460px;
 	display: flex;
@@ -17,7 +24,7 @@ const HeadingsWrapper = styled.div`
 	}
 `
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.section`
 	padding: 135px 0;
 
 	> p {
@@ -37,20 +44,21 @@ const HeadingsHeader = styled.h3`
 	margin: 0 0 34px;
 `
 
-const PictureWrapper = styled.div`
+const PictureWrapper = styled.figure`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
+	margin: 0;
 `
 
 const SmallLetter = styled(Image)`
 	position: absolute;
 `
 
-const ListOfHeadings = () => {
-	return (
+const ListOfHeadings = () => (
+	<Container>
 		<HeadingsWrapper>
 			<FormWrapper>
 				<HeadingsHeader>Request a list of headings</HeadingsHeader>
@@ -69,7 +77,7 @@ const ListOfHeadings = () => {
 				<SmallLetter src={SmallLetterPicture} alt='small letter' />
 			</PictureWrapper>
 		</HeadingsWrapper>
-	)
-}
+	</Container>
+)
 
 export default ListOfHeadings
