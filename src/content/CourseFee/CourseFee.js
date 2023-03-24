@@ -32,7 +32,6 @@ const CardFooter = styled.div`
 	border-top: 1px solid rgba(0, 0, 0, 0.08);
 
 	> span {
-		font-family: sans-serif;
 		font-size: 18;
 		opacity: 0.49;
 	}
@@ -49,7 +48,6 @@ const BlackCardContent = styled.div`
 `
 
 const PriceTypography = styled.span`
-	font-family: sans-serif;
 	color: #ffffff;
 
 	&.line-through {
@@ -87,7 +85,11 @@ const CourseFee = () => {
 								<PriceTypography className='additional-info'>
 									Possibility to pay periodic installment fee.
 								</PriceTypography>
-								<OrangeButton text='Register' padding=' 15px 66px' />
+								<OrangeButton
+									fontSize='16px'
+									text='Register'
+									padding='15px 66px'
+								/>
 							</BlackCardContent>
 						</BlackCard>
 					</CardContent>

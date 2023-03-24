@@ -32,7 +32,6 @@ const SideWrapper = styled.div`
 `
 
 const CarouselHeader = styled.h4`
-	font-family: sans-serif;
 	margin: 10px 0 20px;
 	font-size: 38px;
 	position: relative;
@@ -52,7 +51,6 @@ const CarouselHeader = styled.h4`
 `
 
 const CarouselDescription = styled.p`
-	font-family: sans-serif;
 	font-size: 22px;
 	line-height: 56px;
 	margin: 0 0 22px;
@@ -63,7 +61,6 @@ const CarouselCounter = styled.span`
 	background-color: #f5f5f5;
 	font-size: 34px;
 	padding: 17px 54px;
-	font-family: sans-serif;
 	margin-top: 90px;
 `
 

@@ -22,7 +22,6 @@ const FormWrapper = styled.div`
 
 	> p {
 		margin: 0 0 48px;
-		font-family: sans-serif;
 		font-size: 20px;
 	}
 
@@ -35,7 +34,6 @@ const FormWrapper = styled.div`
 
 const HeadingsHeader = styled.h3`
 	font-size: 34px;
-	font-family: sans-serif;
 	margin: 0 0 34px;
 `
 

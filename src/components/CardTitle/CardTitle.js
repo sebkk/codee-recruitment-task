@@ -9,7 +9,6 @@ const Wrapper = styled.div`
 
 const Title = styled.h3`
 	font-size: 32px;
-	font-family: sans-serif;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -23,7 +22,6 @@ const Title = styled.h3`
 const TitleShadow = styled.h2`
 	font-size: 120px;
 	margin: 0;
-	font-family: sans-serif;
 	opacity: 0.05;
 	line-height: 100px;
 `

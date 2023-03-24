@@ -33,7 +33,6 @@ const SessionHeader = styled.div`
 `
 
 const SessionTitle = styled.h5`
-	font-family: sans-serif;
 	font-size: 26px;
 	margin: 0;
 	width: 210px;
@@ -41,7 +40,6 @@ const SessionTitle = styled.h5`
 `
 
 const SessionText = styled.span`
-	font-family: sans-serif;
 	font-size: 19px;
 	display: flex;
 	align-items: center;
@@ -55,7 +53,6 @@ const SessionInfo = styled.div`
 `
 
 const SessionDescription = styled.span`
-	font-family: sans-serif;
 	font-size: 16px;
 	line-height: 34px;
 	white-space: pre-line;

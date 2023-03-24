@@ -9,7 +9,6 @@ const TabButton = styled.button`
 	background-color: #ffffff;
 	border: #707070 1px solid;
 	cursor: pointer;
-	font-family: sans-serif;
 	font-size: 18px;
 	transition: 0.4s all;
 

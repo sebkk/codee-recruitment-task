@@ -7,12 +7,12 @@ const ButtonStyled = styled.button`
 	color: #ffffff;
 	border-radius: 16px;
 	border: none;
-	font-size: 24px;
+	font-size: ${({ fontSize }) => fontSize || '24px'};
 	font-weight: bold;
 `
 
-const OrangeButton = ({ onClick, text, padding }) => (
-	<ButtonStyled padding={padding} onClick={onClick}>
+const OrangeButton = ({ onClick, text, padding, fontSize }) => (
+	<ButtonStyled fontSize={fontSize} padding={padding} onClick={onClick}>
 		{text}
 	</ButtonStyled>
 )

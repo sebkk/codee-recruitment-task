@@ -16,7 +16,6 @@ const StepperWrapper = styled.div`
 `
 
 const StepperTypography = styled.span`
-	font-family: sans-serif;
 	font-size: 29px;
 	font-weight: bold;
 `
@@ -56,7 +55,6 @@ const CardWrapper = styled.div`
 
 const CardContent = styled.span`
 	text-align: center;
-	font-family: sans-serif;
 	font-size: 45px;
 	font-weight: bold;
 	text-align: center;
@@ -78,14 +76,12 @@ const Countdown = styled.span`
 	border-radius: 16px;
 	font-size: 33px;
 	font-weight: bold;
-	font-family: sans-serif;
 	padding: 15px 15px 15px 14px;
 `
 
 const CountdownTypography = styled.span`
 	font-size: 33px;
 	font-weight: bold;
-	font-family: sans-serif;
 	margin: 0 49px 0 34px;
 `
 

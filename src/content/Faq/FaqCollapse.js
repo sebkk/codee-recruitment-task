@@ -21,7 +21,6 @@ const QuestionHeader = styled.h6`
 	font-weight: normal;
 	margin: 0;
 	font-size: 21px;
-	font-family: sans-serif;
 `
 
 const AddButton = styled.button`
@@ -42,7 +41,6 @@ const CollapseContent = styled.div`
 	overflow: hidden;
 	max-height: 0;
 	line-height: 34px;
-	font-family: sans-serif;
 
 	> span {
 		display: ${({ openCollapse }) => (openCollapse ? 'block ' : 'none')};

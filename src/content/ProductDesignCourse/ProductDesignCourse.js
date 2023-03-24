@@ -40,7 +40,6 @@ const HeaderTypography = styled.h1`
 	font-size: 50px;
 	font-weight: bold;
 	margin: 0;
-	font-family: sans-serif;
 `
 
 const TitleWrapper = styled.div`
@@ -56,7 +55,6 @@ const SubheaderTypography = styled.h3`
 	position: absolute;
 	margin: 28px 0 0;
 	font-size: 38px;
-	font-family: sans-serif;
 	color: #8d8d8d;
 	font-weight: normal;
 `

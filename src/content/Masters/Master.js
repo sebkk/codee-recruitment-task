@@ -9,13 +9,11 @@ const Wrapper = styled.div`
 const MasterName = styled.h6`
 	margin: 35px 0 20px;
 	font-size: 20px;
-	font-family: sans-serif;
 	width: fit-content;
 `
 
 const MasterPosition = styled.span`
 	font-size: 16px;
-	font-family: sans-serif;
 `
 
 const Master = ({ master }) => {

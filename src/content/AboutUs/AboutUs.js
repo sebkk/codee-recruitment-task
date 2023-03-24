@@ -31,7 +31,6 @@ const AboutParagraph = styled.p`
 	font-size: 19px;
 	line-height: 50px;
 	margin: 0;
-	font-family: sans-serif;
 `
 
 const TitleWrapper = styled.div`

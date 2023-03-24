@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const Item = styled.li`
 	font-size: 16px;
-	font-family: sans-serif;
 	line-height: 28px;
 	padding-left: 40px;
 	position: relative;

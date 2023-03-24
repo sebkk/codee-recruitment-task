@@ -26,7 +26,6 @@ const StyledFooter = styled.footer`
 
 const ContactNumber = styled.span`
 	font-size: 20;
-	font-family: sans-serif;
 	text-align: right;
 
 	> a {

@@ -4,7 +4,6 @@ import { COURSE_ACHIEVEMENTS } from '@/constants/CourseAchievements.constants'
 import { ListItem } from '@/components'
 
 const ListHeader = styled.h5`
-	font-family: sans-serif;
 	font-size: 21px;
 	margin: 10px 0 0;
 `
