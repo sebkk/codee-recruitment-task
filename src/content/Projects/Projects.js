@@ -8,7 +8,7 @@ import { List } from '../CourseFee/CourseAchievements'
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 143px 0;
+	padding: 143px 20px;
 `
 
 const Wrapper = styled.section`

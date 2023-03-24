@@ -5,7 +5,7 @@ import { CardTitle, DefaultCard, OrangeButton } from '@/components'
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 140px 0 115px;
+	padding: 140px 20px 115px;
 	background-color: ${({ theme }) => theme.colors.gray};
 	width: 100%;
 `

@@ -25,7 +25,7 @@ const HeadingsWrapper = styled.section`
 `
 
 const FormWrapper = styled.section`
-	padding: 135px 0;
+	padding: 135px 0 135px 20px;
 
 	> p {
 		margin: 0 0 48px;
