@@ -5,7 +5,7 @@ import { AddIcon } from '@/components/icons'
 
 const CollapseWrapper = styled.div`
 	width: 100%;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.white};
 	filter: drop-shadow(10px 10px 99px rgba(211, 211, 211, 0.16));
 	border-radius: 26px;
 `
@@ -33,7 +33,7 @@ const AddButton = styled.button`
 `
 
 const CollapseContent = styled.div`
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.white};
 	min-height: ${({ openCollapse }) => (openCollapse ? '180px' : '0')};
 	border-radius: 0 0 26px 26px;
 	transition: 0.25s all;

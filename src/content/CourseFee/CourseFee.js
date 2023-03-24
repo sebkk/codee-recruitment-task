@@ -66,7 +66,7 @@ const BlackCardContent = styled.section`
 `
 
 const PriceTypography = styled.span`
-	color: #ffffff;
+	color: ${({ theme }) => theme.colors.white};
 
 	&.line-through {
 		font-size: 25px;

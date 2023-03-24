@@ -20,7 +20,7 @@ const Container = styled.article`
 	justify-content: center;
 	position: relative;
 	padding: 290px 0 120px;
-	background-color: #fafafa;
+	background-color: ${({ theme }) => theme.colors.gray};
 `
 
 const Wrapper = styled.section`
@@ -91,7 +91,7 @@ const SquareIconWrapper = styled.div`
 	position: absolute;
 	right: -39px;
 	width: 40px;
-	border: 2px solid #000000;
+	border: 2px solid ${({ theme }) => theme.colors.black};
 	bottom: 28%;
 
 	> svg {

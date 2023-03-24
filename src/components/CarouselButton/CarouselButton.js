@@ -4,7 +4,7 @@ import { ArrowLeftIcon } from '../icons'
 
 const Button = styled.button`
 	background-color: transparent;
-	border: 2px solid #000000;
+	border: 2px solid ${({ theme }) => theme.colors.black};
 	border-radius: 16px;
 	padding: 25px 30px;
 	transform: ${({ rotateRight }) => rotateRight && 'rotate(180deg)'};

@@ -6,12 +6,12 @@ const StyledInput = styled.input`
 	border-radius: 16px;
 	border: 1px solid rgba(255, 255, 255, 0.05);
 	background-color: rgba(255, 255, 255, 0.15);
-	color: #ffffff;
+	color: ${({ theme }) => theme.colors.white};
 	font-size: 22px;
 	outline: none;
 
 	&::placeholder {
-		color: #ffffff;
+		color: ${({ theme }) => theme.colors.white};
 		font-size: 22px;
 	}
 `

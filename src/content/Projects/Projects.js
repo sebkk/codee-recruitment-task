@@ -47,7 +47,7 @@ const CarouselHeader = styled.h4`
 		content: '';
 		width: 28px;
 		height: 28px;
-		background-color: #000000;
+		background-color: ${({ theme }) => theme.colors.black};
 		left: 0;
 		top: 50%;
 		translate: 0 -50%;

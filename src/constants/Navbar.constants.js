@@ -1,9 +1,9 @@
 export const NAV_LINKS = [
-	'Projects',
-	'Partners',
-	'FAQ',
-	'Masters',
-	'Classes',
-	'Course Experience',
-	'About us',
+	{ text: 'Projects', href: '' },
+	{ text: 'Partners', href: '' },
+	{ text: 'FAQ', href: '' },
+	{ text: 'Masters', href: '' },
+	{ text: 'Classes', href: '' },
+	{ text: 'Course Experience', href: '' },
+	{ text: 'About us', href: '' },
 ]

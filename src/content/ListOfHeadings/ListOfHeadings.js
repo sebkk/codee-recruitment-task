@@ -6,7 +6,7 @@ import LetterPicture from '@/pictures/LetterPicture.png'
 import SmallLetterPicture from '@/pictures/SmallLetterPicture.png'
 
 const Container = styled.article`
-	background-color: #000000;
+	background-color: ${({ theme }) => theme.colors.black};
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -16,7 +16,7 @@ const HeadingsWrapper = styled.section`
 	width: 100%;
 	max-width: 1460px;
 	display: flex;
-	color: #ffffff;
+	color: ${({ theme }) => theme.colors.white};
 	gap: 90px;
 
 	> div {

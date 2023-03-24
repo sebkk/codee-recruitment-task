@@ -6,7 +6,7 @@ const Container = styled.article`
 	display: flex;
 	justify-content: center;
 	padding: 140px 0 115px;
-	background-color: #fafafa;
+	background-color: ${({ theme }) => theme.colors.gray};
 	width: 100%;
 `
 
@@ -38,15 +38,16 @@ const Stepper = styled.div`
 const StepperCircle = styled.div`
 	width: 22px;
 	height: 22px;
-	background-color: ${({ filled }) => (filled ? '#000000' : 'transparent')};
+	background-color: ${({ filled, theme }) =>
+		filled ? theme.colors.black : 'transparent'};
 	opacity: 0.3;
-	border: 3px solid #000000;
+	border: 3px solid ${({ theme }) => theme.colors.black};
 	border-radius: 11px;
 `
 
 const StepperLine = styled.div`
 	width: 100%;
-	border-top: 3px dashed #000000;
+	border-top: 3px dashed ${({ theme }) => theme.colors.black};
 	opacity: 0.3;
 `
 
@@ -79,8 +80,8 @@ const CountdownWrapper = styled.aside`
 const Countdown = styled.span`
 	width: 63px;
 	height: 63px;
-	background-color: #000000;
-	color: #ffffff;
+	background-color: ${({ theme }) => theme.colors.black};
+	color: ${({ theme }) => theme.colors.white};
 	border-radius: 16px;
 	font-size: 33px;
 	font-weight: bold;

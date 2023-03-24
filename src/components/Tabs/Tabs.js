@@ -6,7 +6,7 @@ const TabsStyled = styled.aside`
 
 const TabButton = styled.button`
 	padding: 22px 75px;
-	background-color: #ffffff;
+	background-color: ${({ theme }) => theme.colors.white};
 	border: #707070 1px solid;
 	cursor: pointer;
 	font-size: 18px;
@@ -33,8 +33,8 @@ const TabButton = styled.button`
     ${({ isSelectedTab }) =>
 		isSelectedTab &&
 		css`
-			background: black;
-			color: #ffffff;
+			background: ${({ theme }) => theme.colors.black};
+			color: ${({ theme }) => theme.colors.white};
 		`}
 `
 

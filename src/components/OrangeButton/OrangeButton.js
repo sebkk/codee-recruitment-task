@@ -4,7 +4,7 @@ const ButtonStyled = styled.button`
 	cursor: pointer;
 	background-color: #f46632;
 	padding: ${({ padding }) => padding || '24px 116px'};
-	color: #ffffff;
+	color: ${({ theme }) => theme.colors.white};
 	border-radius: 16px;
 	border: none;
 	font-size: ${({ fontSize }) => fontSize || '24px'};

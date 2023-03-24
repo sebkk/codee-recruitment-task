@@ -5,7 +5,7 @@ import { CardTitle } from '@/components'
 import FaqList from './FaqList'
 
 const Container = styled.article`
-	background-color: #fafafa;
+	background-color: ${({ theme }) => theme.colors.gray};
 	display: flex;
 	flex-direction: column;
 	align-items: center;

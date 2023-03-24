@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { BlackProductFactoryLogo } from '../icons'
-
 import { SocialIconButtonsGroup } from '../SocialIconButtonsGroup'
 
 const FooterWrapper = styled.footer`
@@ -30,7 +29,7 @@ const ContactNumber = styled.span`
 
 	> a {
 		text-decoration: none;
-		color: #000000;
+		color: ${({ theme }) => theme.colors.black};
 	}
 `
 

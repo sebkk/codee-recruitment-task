@@ -24,7 +24,7 @@ const SessionHeader = styled.section`
 	::after {
 		position: absolute;
 		content: '';
-		border: 6px solid black;
+		border: 6px solid ${({ theme }) => theme.colors.black};
 		top: 0;
 		left: -7px;
 		height: 38px;

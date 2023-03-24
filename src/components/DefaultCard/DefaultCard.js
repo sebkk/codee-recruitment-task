@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Card = styled.section`
-	background-color: #ffffff;
+	background-color: ${({ theme }) => theme.colors.white};
 	padding: ${({ padding }) => padding || '110px 140px'};
 	border-radius: 30px;
 	max-width: 1460px;
