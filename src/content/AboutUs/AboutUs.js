@@ -19,8 +19,12 @@ const Container = styled.article`
 	display: flex;
 	justify-content: center;
 	position: relative;
-	padding: 290px 0 120px;
+	padding: 210px 0 120px;
 	background-color: ${({ theme }) => theme.colors.gray};
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		padding-top: 290px;
+	}
 `
 
 const Wrapper = styled.section`
@@ -30,43 +34,79 @@ const Wrapper = styled.section`
 
 const TopWrapper = styled.section`
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	position: relative;
-	padding-bottom: 60px;
+	padding-bottom: 30px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		flex-direction: row;
+		justify-content: space-between;
+		padding-bottom: 60px;
+	}
 `
 
 const AboutParagraph = styled.p`
-	font-size: 19px;
-	line-height: 50px;
+	font-size: 17px;
+	line-height: 35px;
 	margin: 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 19px;
+		line-height: 50px;
+	}
 `
 
 const TitleWrapper = styled.section`
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: flex-start;
-	gap: 80px;
 	width: 100%;
+	gap: 80px;
+	padding-top: 100px;
 
 	> div:last-of-type {
 		position: relative;
 		top: -25px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding-top: 200px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		justify-content: flex-end;
+		padding-top: 0;
 	}
 `
 
 const CardWrapper = styled.aside`
 	position: absolute;
 	z-index: 10;
-
-	top: -250px;
+	left: 50%;
+	translate: -50% 0;
+	top: -200px;
 
 	> div {
 		position: relative;
+		padding: 65px 85px;
 
 		> svg {
 			width: 207px;
 			height: 88px;
 		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		top: -250px;
+
+		> div {
+			padding: 125px 195px;
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		left: unset;
+		translate: unset;
 	}
 `
 
@@ -109,7 +149,7 @@ const AboutUs = () => (
 				<section>
 					<TopWrapper>
 						<CardWrapper>
-							<BlackCard padding='125px 195px'>
+							<BlackCard>
 								<ProductFactoryLogo />
 								<WhitePlayIconWrapper>
 									<IconButton href=''>

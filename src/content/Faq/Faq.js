@@ -10,8 +10,12 @@ const Container = styled.article`
 	flex-direction: column;
 	align-items: center;
 	gap: 50px;
-	padding: 100px 0;
+	padding: 80px 0;
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 100px 0;
+	}
 `
 
 const Faq = () => (

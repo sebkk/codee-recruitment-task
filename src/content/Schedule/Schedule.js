@@ -5,9 +5,13 @@ import { CardTitle, DefaultCard, OrangeButton } from '@/components'
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 140px 20px 115px;
+	padding: 80px 50px;
 	background-color: ${({ theme }) => theme.colors.gray};
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 140px 20px 115px;
+	}
 `
 
 const Wrapper = styled.section`
@@ -19,13 +23,31 @@ const StepperWrapper = styled.aside`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 96px;
-	padding: 68px 150px 82px;
+	gap: 10px;
+	padding: 50px 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		gap: 25px;
+		padding: 60px 35px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 68px 150px 82px;
+		gap: 96px;
+	}
 `
 
 const StepperTypography = styled.span`
-	font-size: 29px;
+	font-size: 15px;
 	font-weight: bold;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 22px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		font-size: 29px;
+	}
 `
 
 const Stepper = styled.div`
@@ -53,21 +75,40 @@ const StepperLine = styled.div`
 
 const CardWrapper = styled.section`
 	display: flex;
-	gap: 96px;
-	margin-bottom: 103px;
+	flex-direction: column;
+	gap: 50px;
+	margin-bottom: 70px;
 
 	> section {
 		flex: 1;
 		margin: 0;
+		padding: 35px 0px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		flex-direction: row;
+		gap: 96px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		margin-bottom: 103px;
+
+		> section {
+			padding: 57px 0px;
+		}
 	}
 `
 
 const CardContent = styled.span`
 	text-align: center;
-	font-size: 45px;
+	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 45px;
+	}
 `
 
 const CountdownWrapper = styled.aside`
@@ -78,20 +119,41 @@ const CountdownWrapper = styled.aside`
 `
 
 const Countdown = styled.span`
-	width: 63px;
-	height: 63px;
+	width: 40px;
+	height: 40px;
 	background-color: ${({ theme }) => theme.colors.black};
 	color: ${({ theme }) => theme.colors.white};
 	border-radius: 16px;
-	font-size: 33px;
+	font-size: 15px;
 	font-weight: bold;
-	padding: 15px 15px 15px 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		width: 63px;
+		height: 63px;
+		padding: 15px 15px 15px 14px;
+		font-size: 33px;
+	}
 `
 
 const CountdownTypography = styled.span`
-	font-size: 33px;
+	font-size: 15px;
 	font-weight: bold;
 	margin: 0 49px 0 34px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 18px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		font-size: 23px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 33px;
+	}
 `
 
 const Schedule = () => (
@@ -108,10 +170,10 @@ const Schedule = () => (
 				<StepperTypography>End of course</StepperTypography>
 			</StepperWrapper>
 			<CardWrapper>
-				<DefaultCard padding='57px 0px'>
+				<DefaultCard>
 					<CardContent>2019 / 11 / 11</CardContent>
 				</DefaultCard>
-				<DefaultCard padding='57px 0px'>
+				<DefaultCard>
 					<CardContent>2019 / 08 / 11</CardContent>
 				</DefaultCard>
 			</CardWrapper>

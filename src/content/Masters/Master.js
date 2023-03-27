@@ -45,6 +45,7 @@ const MasterAction = styled.div`
 		isHover ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0)'};
 	opacity: ${({ isHover }) => (isHover ? 1 : 0)};
 	transition: all 0.25s ease-in;
+	pointer-events: ${({ isHover }) => (isHover ? 'auto' : 'none')};
 `
 
 const AboutButton = styled.button`

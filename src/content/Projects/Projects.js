@@ -8,7 +8,11 @@ import { List } from '../CourseFee/CourseAchievements'
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 143px 20px;
+	padding: 80px 50px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 143px 20px;
+	}
 `
 
 const Wrapper = styled.section`
@@ -17,16 +21,28 @@ const Wrapper = styled.section`
 	flex-direction: column;
 	align-items: center;
 	max-width: 1460px;
-	gap: 120px;
+	gap: 80px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		gap: 120px;
+	}
 `
 
 const ContentWrapper = styled.section`
 	width: 100%;
 	display: flex;
-	gap: 160px;
+	flex-direction: column;
+	align-items: center;
+	gap: 80px;
 
 	> div {
 		flex: 0.5;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		flex-direction: row;
+		align-items: stretch;
+		gap: 160px;
 	}
 `
 
@@ -39,7 +55,7 @@ const SideWrapper = styled.section`
 
 const CarouselHeader = styled.h4`
 	margin: 10px 0 20px;
-	font-size: 38px;
+	font-size: 30px;
 	position: relative;
 	padding-left: 35px;
 
@@ -54,20 +70,36 @@ const CarouselHeader = styled.h4`
 		border-radius: 14px;
 		position: absolute;
 	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 38px;
+	}
 `
 
 const CarouselDescription = styled.p`
-	font-size: 22px;
-	line-height: 56px;
-	margin: 0 0 22px;
+	font-size: 17px;
+	line-height: 35px;
+	margin: 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 22px;
+		margin: 0 0 22px;
+		line-height: 56px;
+	}
 `
 
 const CarouselCounter = styled.span`
 	border-radius: 16px;
 	background-color: #f5f5f5;
-	font-size: 34px;
-	padding: 17px 54px;
-	margin-top: 90px;
+	font-size: 22px;
+	padding: 12px 32px;
+	margin-top: 40px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 34px;
+		padding: 17px 54px;
+		margin-top: 90px;
+	}
 `
 
 const Carousel = styled.aside`
@@ -75,14 +107,25 @@ const Carousel = styled.aside`
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
-	width: 100%;
 	position: relative;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		width: 100%;
+	}
 `
 
 const CarouselBackground = styled.div`
 	background: #f5f5f5;
 	border-radius: 30px;
-	height: 65%;
+	height: 55%;
+	width: 100%;
+	position: absolute;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		position: static;
+		height: 65%;
+		width: auto;
+	}
 `
 
 const ButtonsWrapper = styled.div`
@@ -90,18 +133,30 @@ const ButtonsWrapper = styled.div`
 	display: flex;
 	justify-self: flex-end;
 	justify-content: space-between;
-	padding-bottom: 60px;
+	margin-top: 30px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 0 0 60px;
+		margin-top: 0;
+	}
 `
 
 const CarouselCard = styled.div`
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	translate: -50% 0;
-
 	> section {
 		height: 612px;
 		width: 327px;
+		margin: 50px 70px 0;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		translate: -50% 0;
+
+		> section {
+			margin: 0;
+		}
 	}
 `
 

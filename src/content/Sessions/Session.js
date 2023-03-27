@@ -14,8 +14,8 @@ const SessionWrapper = styled.section`
 
 const SessionHeader = styled.section`
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	gap: 140px;
 	padding: 11px 16px;
 	background-color: #f8f8f8;
 	border-radius: 12px;
@@ -33,39 +33,98 @@ const SessionHeader = styled.section`
 `
 
 const SessionTitle = styled.h5`
-	font-size: 26px;
+	font-size: 12px;
 	margin: 0;
-	width: 210px;
 	white-space: nowrap;
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		width: 170px;
+		font-size: 22px;
+		width: 170px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		width: 210px;
+		font-size: 26px;
+	}
 `
 
 const SessionText = styled.span`
-	font-size: 19px;
+	font-size: 11px;
 	display: flex;
 	align-items: center;
 	gap: 6px;
+
+	> svg {
+		scale: 0.8;
+	}
+
+	> span:first-of-type {
+		display: none;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		font-size: 15px;
+		> svg {
+			scale: 1;
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 19px;
+
+		> span:first-of-type {
+			display: block;
+			font-size: 19px;
+		}
+	}
 `
 
 const SessionInfo = styled.section`
 	display: flex;
-	gap: 140px;
-	padding: 48px 0 72px 15px;
+	gap: 50px;
+	padding: 38px 0 52px 16px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		gap: 140px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 48px 0 72px 16px;
+	}
 `
 
 const SessionDescription = styled.span`
 	font-size: 16px;
-	line-height: 34px;
+	line-height: 27px;
 	white-space: pre-line;
+	padding-right: 20px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		line-height: 34px;
+	}
 `
 
 const MastersWrapper = styled.figure`
 	display: flex;
-	gap: 25px;
-	min-width: 210px;
+	flex-wrap: wrap;
+	gap: 10px;
+	min-width: 100px;
+	margin: 0;
 
 	> img {
 		width: 87px;
 		height: 87px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		width: 170px;
+		flex-wrap: nowrap;
+		gap: 25px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		min-width: 210px;
 	}
 `
 
@@ -81,10 +140,10 @@ const Session = ({ session }) => {
 			<SessionHeader>
 				<SessionTitle>{title}</SessionTitle>
 				<SessionText>
-					<ClockIcon /> Duration: {duration}
+					<ClockIcon /> <span>Duration:</span> {duration}
 				</SessionText>
 				<SessionText>
-					<CalendarIcon /> Date: {date}
+					<CalendarIcon /> <span>Date:</span> {date}
 				</SessionText>
 				<IconButton href='https://www.google.pl/'>
 					<SessionText>

@@ -20,7 +20,16 @@ const CollapseHeader = styled.div`
 const QuestionHeader = styled.h6`
 	font-weight: normal;
 	margin: 0;
-	font-size: 21px;
+	font-size: 15px;
+	line-height: 25px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		font-size: 17px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
+		font-size: 21px;
+	}
 `
 
 const AddButton = styled.button`
@@ -34,16 +43,23 @@ const AddButton = styled.button`
 
 const CollapseContent = styled.div`
 	background: ${({ theme }) => theme.colors.white};
-	min-height: ${({ openCollapse }) => (openCollapse ? '180px' : '0')};
+	min-height: ${({ openCollapse }) => (openCollapse ? '220px' : '0')};
 	border-radius: 0 0 26px 26px;
 	transition: 0.25s all;
 	padding: ${({ openCollapse }) => (openCollapse ? '10px 58px 10px ' : '0')};
 	overflow: hidden;
-	max-height: 0;
+	height: auto;
 	line-height: 34px;
 
 	> span {
 		display: ${({ openCollapse }) => (openCollapse ? 'block ' : 'none')};
+		font-size: 14px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> span {
+			font-size: 16px;
+		}
 	}
 `
 

@@ -14,11 +14,19 @@ const Container = styled.article`
 		rgba(250, 250, 250, 1) 50%,
 		rgba(255, 255, 255, 1) 50%
 	);
-	padding: 90px 0 165px;
+	padding: 60px 0 100px;
 	width: 100%;
 
-	> div {
-		width: 100%;
+	> section {
+		padding: 55px 80px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 90px 0 165px;
+
+		> section {
+			padding: 68px 106px;
+		}
 	}
 `
 
@@ -26,19 +34,38 @@ const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	gap: 75px;
+	gap: 55px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		gap: 75px;
+	}
 `
 
 const CardContent = styled.section`
 	display: flex;
+	flex-direction: column;
 	gap: 30px;
 
 	> div:first-of-type {
-		flex: 0.7;
+		flex: 0.6;
 	}
 
 	> div:last-of-type {
-		flex: 0.3;
+		flex: 0.4;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
+		flex-direction: row;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		> div:first-of-type {
+			flex: 0.7;
+		}
+
+		> div:last-of-type {
+			flex: 0.3;
+		}
 	}
 `
 
@@ -61,8 +88,11 @@ const BlackCardContent = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
 	text-align: center;
+	gap: 20px;
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
+		justify-content: space-between;
+	}
 `
 
 const PriceTypography = styled.span`
@@ -86,7 +116,7 @@ const PriceTypography = styled.span`
 
 const CourseFee = () => (
 	<Container>
-		<DefaultCard padding='68px 106px'>
+		<DefaultCard>
 			<Wrapper>
 				<CardTitle title='Course fee' />
 				<div>

@@ -4,13 +4,11 @@ import { NAV_LINKS } from '@/constants/Navbar.constants'
 import { ProductFactoryLogo } from '../icons'
 
 const Nav = styled.header`
-	width: 100%;
-	position: fixed;
-	background-color: ${({ theme }) => theme.colors.black};
-	padding: 52px 20px;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	z-index: 999;
+	position: fixed;
 `
 
 const NavbarWrapper = styled.nav`
@@ -18,8 +16,9 @@ const NavbarWrapper = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: ${({ theme }) => theme.colors.black};
 	width: 100%;
-	max-width: 1460px;
+	padding: 52px 10px;
 `
 
 const RegisterButton = styled.button`
@@ -42,6 +41,7 @@ const NavLink = styled.a`
 const Navbar = () => (
 	<Nav>
 		<NavbarWrapper>
+			{/* <section> */}
 			<ProductFactoryLogo />
 			{NAV_LINKS.map(({ text, href }) => (
 				<NavLink key={text} href={href}>
@@ -49,6 +49,7 @@ const Navbar = () => (
 				</NavLink>
 			))}
 			<RegisterButton>Register</RegisterButton>
+			{/* </section> */}
 		</NavbarWrapper>
 	</Nav>
 )

@@ -21,10 +21,6 @@ const Wrapper = styled.section`
 	display: flex;
 	justify-content: center;
 	width: 100%;
-
-	> section {
-		width: 100%;
-	}
 `
 
 const CardContent = styled.section`
@@ -37,14 +33,44 @@ const CardContent = styled.section`
 
 const TabContent = styled.section`
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 75px;
+	gap: 55px;
+
+	> img {
+		height: auto;
+		width: 50%;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		flex-direction: row;
+
+		> img {
+			height: 70%;
+			width: auto;
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		gap: 75px;
+
+		> img {
+			height: 100%;
+			width: auto;
+		}
+	}
 `
 
 const Paragraph = styled.p`
-	font-size: 20px;
+	font-size: 17px;
+	line-height: 32px;
 	margin: 0;
-	line-height: 48px;
+	padding-bottom: 10px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		font-size: 20px;
+		line-height: 48px;
+	}
 `
 
 const CourseExperience = () => {

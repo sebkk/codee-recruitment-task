@@ -16,8 +16,12 @@ const Container = styled.article`
 	);
 	padding-bottom: 50px;
 
-	> div {
-		width: 100%;
+	> section {
+		padding: 72px 58px 54px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 92px 78px 74px;
 	}
 `
 
@@ -31,7 +35,7 @@ const CardContent = styled.section`
 
 const Masters = () => (
 	<Container>
-		<DefaultCard padding='92px 78px 74px'>
+		<DefaultCard>
 			<CardContent>
 				<CardTitle title='Masters' />
 				<MastersList />

@@ -6,13 +6,13 @@ const COLORS = {
 	lightGray: '#FAFAFA',
 }
 
-const BREAKPOINTS_DEVICES = {
-	mobileS: '320px',
-	mobileM: '450px',
-	mobileL: '600px',
-	tablet: '768px',
-	laptop: '1024px',
-	desktop: '1360px',
+export const BREAKPOINTS_VALUES = {
+	mobileS: 320,
+	mobileM: 450,
+	mobileL: 600,
+	tablet: 768,
+	laptop: 1024,
+	desktop: 1360,
 }
 
 const theme = {
@@ -25,12 +25,12 @@ const theme = {
 	},
 	breakpoints: {
 		devices: {
-			mobileS: `(min-width: ${BREAKPOINTS_DEVICES.mobileS})`,
-			mobileM: `(min-width: ${BREAKPOINTS_DEVICES.mobileM})`,
-			mobileL: `(min-width: ${BREAKPOINTS_DEVICES.mobileL})`,
-			tablet: `(min-width: ${BREAKPOINTS_DEVICES.tablet})`,
-			laptop: `(min-width: ${BREAKPOINTS_DEVICES.laptop})`,
-			desktop: `(min-width: ${BREAKPOINTS_DEVICES.desktop})`,
+			mobileS: `(min-width: ${BREAKPOINTS_VALUES.mobileS}px)`,
+			mobileM: `(min-width: ${BREAKPOINTS_VALUES.mobileM}px)`,
+			mobileL: `(min-width: ${BREAKPOINTS_VALUES.mobileL}px)`,
+			tablet: `(min-width: ${BREAKPOINTS_VALUES.tablet}px)`,
+			laptop: `(min-width: ${BREAKPOINTS_VALUES.laptop}px)`,
+			desktop: `(min-width: ${BREAKPOINTS_VALUES.desktop}px)`,
 		},
 	},
 }

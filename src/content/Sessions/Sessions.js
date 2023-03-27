@@ -8,16 +8,24 @@ import Session from './Session'
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 160px 0 190px;
+	padding: 120px 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		padding: 160px 0 190px;
+	}
 `
 
 const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 130px;
+	gap: 80px;
 	padding: 0 38px;
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+		gap: 130px;
+	}
 `
 
 const SessionsWrapper = styled.section`
