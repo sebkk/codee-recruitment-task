@@ -13,9 +13,9 @@ const AddIcon = () => (
 				transform='translate(0 9.423)'
 				fill='none'
 				stroke='#000'
-				stroke-linecap='round'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeLinecap='round'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 			<line
 				id='Line_81'
@@ -24,9 +24,9 @@ const AddIcon = () => (
 				transform='translate(9.423) rotate(90)'
 				fill='none'
 				stroke='#000'
-				stroke-linecap='round'
-				stroke-miterlimit='10'
-				stroke-width='2'
+				strokeLinecap='round'
+				strokeMiterlimit='10'
+				strokeWidth='2'
 			/>
 		</g>
 	</svg>

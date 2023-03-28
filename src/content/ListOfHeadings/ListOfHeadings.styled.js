@@ -44,7 +44,11 @@ export const FormWrapper = styled.section`
 
 		> li {
 			font-size: 20px;
-			margin: 45px 0 0;
+
+			&::before {
+				top: -30%;
+				translate: 0 -50%;
+			}
 		}
 	}
 
@@ -63,8 +67,6 @@ export const FormWrapper = styled.section`
 		> li {
 			list-style: none;
 			color: #acacac;
-			font-size: 20px;
-			margin: 65px 0 0;
 		}
 	}
 `

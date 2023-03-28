@@ -178,7 +178,7 @@ export const CarouselCard = styled.div`
 
 	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
 		> section {
-			height: 612px;
+			height: 550px;
 			width: 327px;
 			margin: 50px 70px 0;
 		}

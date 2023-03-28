@@ -12,8 +12,8 @@ const CircleLineIcon = () => (
 			transform='translate(-81.8 -400)'
 			fill='none'
 			stroke='#000'
-			stroke-miterlimit='10'
-			stroke-width='2'
+			strokeMiterlimit='10'
+			strokeWidth='2'
 		/>
 	</svg>
 )

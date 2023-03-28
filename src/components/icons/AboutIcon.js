@@ -13,8 +13,8 @@ const AboutIcon = () => (
 				transform='translate(8943.205 15746.281)'
 				fill='none'
 				stroke='#fff'
-				stroke-linecap='round'
-				stroke-width='2'
+				strokeLinecap='round'
+				strokeWidth='2'
 			/>
 			<path
 				id='Path_596'
@@ -23,8 +23,8 @@ const AboutIcon = () => (
 				transform='translate(8952.403 15743.425)'
 				fill='none'
 				stroke='#fff'
-				stroke-linecap='round'
-				stroke-width='2'
+				strokeLinecap='round'
+				strokeWidth='2'
 			/>
 			<path
 				id='Path_597'
@@ -33,8 +33,8 @@ const AboutIcon = () => (
 				transform='translate(8952.616 15740.012)'
 				fill='none'
 				stroke='#fff'
-				stroke-linecap='round'
-				stroke-width='2'
+				strokeLinecap='round'
+				strokeWidth='2'
 			/>
 		</g>
 	</svg>

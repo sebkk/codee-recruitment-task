@@ -12,8 +12,8 @@ const EllipseLineIcon = () => (
 			transform='translate(-69.4 -400.7)'
 			fill='none'
 			stroke='#000'
-			stroke-miterlimit='10'
-			stroke-width='2'
+			strokeMiterlimit='10'
+			strokeWidth='2'
 		/>
 	</svg>
 )
