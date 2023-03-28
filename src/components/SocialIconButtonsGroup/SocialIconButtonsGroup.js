@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 import {
 	InstagramIcon,
 	FacebookIcon,
@@ -8,18 +6,8 @@ import {
 	WhiteInstagramIcon,
 	WhiteTwitterIcon,
 } from '../icons'
-
+import { Wrapper } from './SocialIconButtonsGroup.styled'
 import IconButton from './IconButton'
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: ${({ orientationVertical }) =>
-		orientationVertical ? 'column' : 'row'};
-	align-items: ${({ orientationVertical }) => !orientationVertical && 'center'};
-	justify-content: ${({ orientationVertical }) =>
-		orientationVertical && 'center'};
-	gap: ${({ gap }) => gap || '40px'};
-`
 
 const SOCIAL_ICONS = [
 	{
