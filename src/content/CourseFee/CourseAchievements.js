@@ -4,8 +4,12 @@ import { COURSE_ACHIEVEMENTS } from '@/constants/CourseAchievements.constants'
 import { ListItem } from '@/components'
 
 const ListHeader = styled.h5`
-	font-size: 21px;
+	font-size: 15px;
 	margin: 10px 0 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 21px;
+	}
 `
 
 export const List = styled.ul`

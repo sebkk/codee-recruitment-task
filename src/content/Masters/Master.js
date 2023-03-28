@@ -13,22 +13,41 @@ const Wrapper = styled.div`
 `
 
 const MasterImageWrapper = styled.figure`
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	margin: 0;
 	position: relative;
-	align-self: center;
+	align-self: left;
+
+	> img {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		width: 200px;
+		height: 200px;
+	}
 `
 
 const MasterName = styled.h6`
-	margin: 35px 0 20px;
-	font-size: 20px;
+	margin: 15px 0 10px;
+	font-size: 15px;
 	width: fit-content;
 	text-align: left;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		margin: 35px 0 20px;
+		font-size: 20px;
+	}
 `
 
 const MasterPosition = styled.figcaption`
-	font-size: 16px;
+	font-size: 13px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 16px;
+	}
 `
 
 const MasterAction = styled.div`
@@ -46,20 +65,36 @@ const MasterAction = styled.div`
 	opacity: ${({ isHover }) => (isHover ? 1 : 0)};
 	transition: all 0.25s ease-in;
 	pointer-events: ${({ isHover }) => (isHover ? 'auto' : 'none')};
+
+	> div {
+		gap: 20px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> div {
+			gap: 30px;
+		}
+	}
 `
 
 const AboutButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 15px;
+	gap: 5px;
 	background: rgba(180, 180, 180, 0.7);
-	font-size: 15px;
-	padding: 16px 14px;
+	font-size: 13px;
+	padding: 10px;
 	border-radius: 9px;
 	color: ${({ theme }) => theme.colors.white};
 	border: none;
 	cursor: pointer;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		gap: 15px;
+		font-size: 15px;
+		padding: 16px 14px;
+	}
 `
 
 const Master = ({ master }) => {
@@ -74,7 +109,7 @@ const Master = ({ master }) => {
 				onMouseLeave={() => setIsHover(false)}
 			>
 				<MasterAction isHover={isHover}>
-					<SocialIconButtonsGroup gap='30px' isWhite />
+					<SocialIconButtonsGroup isWhite />
 					<AboutButton>
 						<AboutIcon />
 						About Master

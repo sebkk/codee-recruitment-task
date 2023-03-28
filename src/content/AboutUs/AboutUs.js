@@ -14,15 +14,24 @@ import {
 	EllipseLineIcon,
 	SquareIcon,
 } from '@/components/icons'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
 	position: relative;
-	padding: 210px 0 120px;
+	padding: 170px 0 90px;
 	background-color: ${({ theme }) => theme.colors.gray};
 
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		padding: 210px 0 120px;
+	}
+
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		padding-top: 240px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
 		padding-top: 290px;
 	}
 `
@@ -46,9 +55,14 @@ const TopWrapper = styled.section`
 `
 
 const AboutParagraph = styled.p`
-	font-size: 17px;
-	line-height: 35px;
+	font-size: 15px;
+	line-height: 26px;
 	margin: 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		font-size: 17px;
+		line-height: 35px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 19px;
@@ -69,7 +83,7 @@ const TitleWrapper = styled.section`
 		top: -25px;
 	}
 
-	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
 		padding-top: 200px;
 	}
 
@@ -82,21 +96,45 @@ const TitleWrapper = styled.section`
 const CardWrapper = styled.aside`
 	position: absolute;
 	z-index: 10;
-	left: 50%;
-	translate: -50% 0;
-	top: -200px;
+	left: 0;
+	top: -155px;
 
 	> div {
 		position: relative;
-		padding: 65px 85px;
+		padding: 55px 85px;
 
 		> svg {
-			width: 207px;
-			height: 88px;
+			width: 130px;
+			height: auto;
 		}
 	}
 
-	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		> div {
+			position: relative;
+			padding: 65px 85px;
+
+			> svg {
+				width: 207px;
+			}
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		left: 50%;
+		translate: -50% 0;
+		top: -200px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		top: -210px;
+
+		> div {
+			padding: 75px 85px;
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
 		top: -250px;
 
 		> div {
@@ -128,6 +166,7 @@ const LinesWrapper = styled.div`
 `
 
 const SquareIconWrapper = styled.div`
+	display: none;
 	position: absolute;
 	right: -39px;
 	width: 40px;
@@ -140,10 +179,14 @@ const SquareIconWrapper = styled.div`
 		top: -50%;
 		translate: 0 -50%;
 	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		display: block;
+	}
 `
 
 const AboutUs = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.ABOUT_US}>
 		<DefaultCard>
 			<Wrapper>
 				<section>

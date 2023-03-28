@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import CourseExperienceProductFactory from '@/pictures/CourseExperienceProductFactory.png'
 import { DefaultCard, CardTitle, Tabs } from '@/components'
 import { TABS } from '@/constants/CourseExperience.constants'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 const Container = styled.article`
 	display: flex;
@@ -28,14 +29,18 @@ const CardContent = styled.section`
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	gap: 70px;
+	gap: 45px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
+		gap: 70px;
+	}
 `
 
 const TabContent = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 55px;
+	gap: 35px;
 
 	> img {
 		height: auto;
@@ -44,6 +49,7 @@ const TabContent = styled.section`
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		flex-direction: row;
+		gap: 55px;
 
 		> img {
 			height: 70%;
@@ -62,10 +68,15 @@ const TabContent = styled.section`
 `
 
 const Paragraph = styled.p`
-	font-size: 17px;
-	line-height: 32px;
+	font-size: 15px;
+	line-height: 26px;
 	margin: 0;
 	padding-bottom: 10px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		font-size: 17px;
+		line-height: 32px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 20px;
@@ -77,7 +88,7 @@ const CourseExperience = () => {
 	const [selectedTab, setSelectedTab] = useState('Before')
 
 	return (
-		<Container>
+		<Container id={SECTIONS_IDS.COURSE_EXEPRIENCE}>
 			<Wrapper>
 				<DefaultCard>
 					<CardContent>

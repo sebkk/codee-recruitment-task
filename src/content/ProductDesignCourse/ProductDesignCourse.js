@@ -3,14 +3,16 @@ import styled from 'styled-components'
 
 import UiuxPicture from '@/pictures/UiuxPicture.png'
 import { OrangeButton, DefaultCard } from '@/components'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 import ProductDesignCoursePicture from '@/pictures/ProductDesignCoursePicture.png'
+import { handleScroll } from '@/utils'
 
 const Container = styled.article`
 	background-color: #111111;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 180px;
+	padding-top: 110px;
 	background: linear-gradient(
 		180deg,
 		rgba(17, 17, 17, 1) 85%,
@@ -19,6 +21,10 @@ const Container = styled.article`
 
 	> * {
 		max-width: 1460px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding-top: 180px;
 	}
 `
 
@@ -58,8 +64,15 @@ const SideWrapper = styled.aside`
 	gap: 25px;
 
 	> span {
-		font-size: 20px;
-		line-height: 35px;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> span {
+			font-size: 20px;
+			line-height: 35px;
+		}
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
@@ -71,11 +84,11 @@ const SideWrapper = styled.aside`
 `
 
 const HeaderTypography = styled.h1`
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: bold;
 	margin: 0;
 
-	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
 		font-size: 35px;
 	}
 
@@ -95,7 +108,14 @@ const ImageWrapper = styled.figure`
 
 	> img {
 		width: auto;
-		height: 100px;
+		height: 65px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> img {
+			width: auto;
+			height: 100px;
+		}
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.laptop} {
@@ -108,19 +128,25 @@ const ImageWrapper = styled.figure`
 
 const SubheaderTypography = styled.h3`
 	position: absolute;
-	margin: 28px 0 0;
-	font-size: 28px;
+	margin: 7px 0 0;
+	font-size: 20px;
 	color: #8d8d8d;
 	font-weight: normal;
 
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 28px;
+		margin-top: 20px;
+	}
+
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 38px;
+		margin-top: 28px;
 	}
 `
 
 const ProductDesignCourse = () => {
 	return (
-		<Container>
+		<Container id={SECTIONS_IDS.PRODUCT_DESIGN_COURSE}>
 			<DefaultCard>
 				<Wrapper>
 					<SideWrapper>
@@ -136,7 +162,10 @@ const ProductDesignCourse = () => {
 							marketing, and finally designing and creating real digital
 							products for real users.
 						</span>
-						<OrangeButton text='Start Register' />
+						<OrangeButton
+							text='Start Register'
+							onClick={e => handleScroll(e, SECTIONS_IDS.LIST_OF_HEADINGS)}
+						/>
 					</SideWrapper>
 					<Image
 						src={ProductDesignCoursePicture}

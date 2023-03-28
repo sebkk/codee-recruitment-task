@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { CardTitle } from '@/components'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 import FaqList from './FaqList'
 
@@ -10,8 +11,12 @@ const Container = styled.article`
 	flex-direction: column;
 	align-items: center;
 	gap: 50px;
-	padding: 80px 0;
+	padding: 50px 0;
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 80px 0;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		padding: 100px 0;
@@ -19,7 +24,7 @@ const Container = styled.article`
 `
 
 const Faq = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.FAQ}>
 		<CardTitle title='Frequently Asked Questions' titleShadow='FAQ' />
 		<FaqList />
 	</Container>

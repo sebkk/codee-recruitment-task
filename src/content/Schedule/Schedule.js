@@ -1,13 +1,23 @@
 import styled from 'styled-components'
 
+import { handleScroll } from '@/utils'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 import { CardTitle, DefaultCard, OrangeButton } from '@/components'
 
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 80px 50px;
+	padding: 40px 20px;
 	background-color: ${({ theme }) => theme.colors.gray};
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		padding: 50px 40px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 80px 50px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		padding: 140px 20px 115px;
@@ -24,7 +34,11 @@ const StepperWrapper = styled.aside`
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
-	padding: 50px 0;
+	padding: 30px 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 50px 0;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		gap: 25px;
@@ -38,8 +52,12 @@ const StepperWrapper = styled.aside`
 `
 
 const StepperTypography = styled.span`
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: bold;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		font-size: 15px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
 		font-size: 22px;
@@ -101,10 +119,14 @@ const CardWrapper = styled.section`
 
 const CardContent = styled.span`
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 30px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 45px;
@@ -116,6 +138,16 @@ const CountdownWrapper = styled.aside`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	> button {
+		padding: 17px 35px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> button {
+			padding: 17px 75px;
+		}
+	}
 `
 
 const Countdown = styled.span`
@@ -141,10 +173,11 @@ const Countdown = styled.span`
 const CountdownTypography = styled.span`
 	font-size: 15px;
 	font-weight: bold;
-	margin: 0 49px 0 34px;
+	margin: 0 16px;
 
 	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
 		font-size: 18px;
+		margin: 0 49px 0 34px;
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
@@ -157,7 +190,7 @@ const CountdownTypography = styled.span`
 `
 
 const Schedule = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.PARTNERS}>
 		<Wrapper>
 			<CardTitle title='Schedule' />
 			<StepperWrapper>
@@ -180,7 +213,10 @@ const Schedule = () => (
 			<CountdownWrapper>
 				<Countdown>11</Countdown>
 				<CountdownTypography>Days left to sign up</CountdownTypography>
-				<OrangeButton text='Register' padding='17px 85px' />
+				<OrangeButton
+					text='Register'
+					onClick={e => handleScroll(e, SECTIONS_IDS.LIST_OF_HEADINGS)}
+				/>
 			</CountdownWrapper>
 		</Wrapper>
 	</Container>

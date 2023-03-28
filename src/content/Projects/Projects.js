@@ -2,13 +2,18 @@ import styled from 'styled-components'
 
 import { CardTitle, ListItem, CarouselButton, DefaultCard } from '@/components'
 import { TODO_APP_LIST } from '@/constants/Projects.constants'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 import { List } from '../CourseFee/CourseAchievements'
 
 const Container = styled.article`
 	display: flex;
 	justify-content: center;
-	padding: 80px 50px;
+	padding: 50px 40px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 80px 50px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		padding: 143px 20px;
@@ -55,14 +60,14 @@ const SideWrapper = styled.section`
 
 const CarouselHeader = styled.h4`
 	margin: 10px 0 20px;
-	font-size: 30px;
+	font-size: 22px;
 	position: relative;
-	padding-left: 35px;
+	padding-left: 30px;
 
 	::before {
 		content: '';
-		width: 28px;
-		height: 28px;
+		width: 20px;
+		height: 20px;
 		background-color: ${({ theme }) => theme.colors.black};
 		left: 0;
 		top: 50%;
@@ -71,15 +76,30 @@ const CarouselHeader = styled.h4`
 		position: absolute;
 	}
 
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 30px;
+		padding-left: 35px;
+
+		::before {
+			width: 28px;
+			height: 28px;
+		}
+	}
+
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 38px;
 	}
 `
 
 const CarouselDescription = styled.p`
-	font-size: 17px;
-	line-height: 35px;
+	font-size: 14px;
+	line-height: 27px;
 	margin: 0;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 17px;
+		line-height: 35px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 22px;
@@ -91,9 +111,15 @@ const CarouselDescription = styled.p`
 const CarouselCounter = styled.span`
 	border-radius: 16px;
 	background-color: #f5f5f5;
-	font-size: 22px;
-	padding: 12px 32px;
-	margin-top: 40px;
+	font-size: 18px;
+	padding: 12px 27px;
+	margin-top: 15px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 22px;
+		padding: 12px 32px;
+		margin-top: 40px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 34px;
@@ -143,9 +169,25 @@ const ButtonsWrapper = styled.div`
 
 const CarouselCard = styled.div`
 	> section {
-		height: 612px;
-		width: 327px;
-		margin: 50px 70px 0;
+		height: 370px;
+		width: 180px;
+		margin: 50px 50px 0;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		> section {
+			height: 540px;
+			width: 230px;
+			margin: 50px 60px 0;
+		}
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> section {
+			height: 612px;
+			width: 327px;
+			margin: 50px 70px 0;
+		}
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
@@ -161,7 +203,7 @@ const CarouselCard = styled.div`
 `
 
 const Projects = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.PROJECTS}>
 		<Wrapper>
 			<CardTitle title='Projects' />
 			<ContentWrapper>
@@ -174,9 +216,7 @@ const Projects = () => (
 					</CarouselDescription>
 					<List>
 						{TODO_APP_LIST.map((achievement, index) => (
-							<ListItem margin='35px 0 0' key={index}>
-								{achievement}
-							</ListItem>
+							<ListItem key={index}>{achievement}</ListItem>
 						))}
 					</List>
 					<CarouselCounter>4 / 15</CarouselCounter>

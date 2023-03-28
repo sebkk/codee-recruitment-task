@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { CardTitle, DefaultCard } from '@/components'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 import MastersList from './MastersList'
 
@@ -14,10 +15,14 @@ const Container = styled.article`
 		rgba(255, 255, 255, 1) 50%,
 		rgba(250, 250, 250, 1) 50%
 	);
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 
-	> section {
-		padding: 72px 58px 54px;
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding-bottom: 50px;
+
+		> section {
+			padding: 72px 58px 54px;
+		}
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
@@ -34,7 +39,7 @@ const CardContent = styled.section`
 `
 
 const Masters = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.MASTERS}>
 		<DefaultCard>
 			<CardContent>
 				<CardTitle title='Masters' />

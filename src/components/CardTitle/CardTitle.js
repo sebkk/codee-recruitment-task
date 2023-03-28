@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h3`
-	font-size: 26px;
+	font-size: 18px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -17,6 +17,14 @@ const Title = styled.h3`
 	line-height: 26px;
 	white-space: nowrap;
 
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		font-size: 22px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 26px;
+	}
+
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		font-size: 32px;
 		line-height: 32px;
@@ -24,10 +32,20 @@ const Title = styled.h3`
 `
 
 const TitleShadow = styled.h2`
-	font-size: 70px;
+	font-size: 40px;
+	line-height: 40px;
 	margin: 0;
 	opacity: 0.05;
-	line-height: 70px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 70px;
+		line-height: 70px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		font-size: 100px;

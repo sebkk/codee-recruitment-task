@@ -7,7 +7,11 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 55px 50px;
+	gap: 30px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		gap: 55px 50px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		gap: 75px 70px;

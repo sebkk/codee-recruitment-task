@@ -14,14 +14,23 @@ const CollapseHeader = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	padding: 34px 58px;
+	padding: 25px 20px;
+	gap: 15px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 34px 58px;
+	}
 `
 
 const QuestionHeader = styled.h6`
 	font-weight: normal;
 	margin: 0;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 25px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 15px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		font-size: 17px;
@@ -39,6 +48,17 @@ const AddButton = styled.button`
 	transition: 0.25s all;
 	transform: ${({ openCollapse }) =>
 		openCollapse ? 'rotate(45deg)' : 'rotate(0)'};
+
+	> svg {
+		width: 16px;
+		height: auto;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		> svg {
+			width: 20px;
+		}
+	}
 `
 
 const CollapseContent = styled.div`

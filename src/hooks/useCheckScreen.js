@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { BREAKPOINTS_VALUES } from '@/theme'
 
 export const useCheckScreen = () => {
-	const [screenWidth, setScreenWidth] = useState(window?.innerWidth)
+	const [screenWidth, setScreenWidth] = useState(0)
 
 	const getScreenWidth = useCallback(() => {
 		const width = window?.innerWidth
@@ -20,10 +20,22 @@ export const useCheckScreen = () => {
 		}
 	}, [getScreenWidth, screenWidth])
 
+	useEffect(() => {
+		if (window) {
+			const width = window?.innerWidth
+			setScreenWidth(width)
+		}
+	}, [])
+
+	const isSmallMobile = screenWidth < BREAKPOINTS_VALUES.mobileL
 	const isSmallDevice = screenWidth < BREAKPOINTS_VALUES.tablet
+	const isNavbarHamburgerResolution =
+		screenWidth < BREAKPOINTS_VALUES.navbarHamburger
 
 	return {
 		screenWidth,
 		isSmallDevice,
+		isNavbarHamburgerResolution,
+		isSmallMobile,
 	}
 }

@@ -7,10 +7,10 @@ const COLORS = {
 }
 
 export const BREAKPOINTS_VALUES = {
-	mobileS: 320,
 	mobileM: 450,
 	mobileL: 600,
 	tablet: 768,
+	navbarHamburger: 950,
 	laptop: 1024,
 	desktop: 1360,
 }
@@ -25,10 +25,10 @@ const theme = {
 	},
 	breakpoints: {
 		devices: {
-			mobileS: `(min-width: ${BREAKPOINTS_VALUES.mobileS}px)`,
 			mobileM: `(min-width: ${BREAKPOINTS_VALUES.mobileM}px)`,
 			mobileL: `(min-width: ${BREAKPOINTS_VALUES.mobileL}px)`,
 			tablet: `(min-width: ${BREAKPOINTS_VALUES.tablet}px)`,
+			smallDevice: `(min-width: ${BREAKPOINTS_VALUES.navbarHamburger}px)`,
 			laptop: `(min-width: ${BREAKPOINTS_VALUES.laptop}px)`,
 			desktop: `(min-width: ${BREAKPOINTS_VALUES.desktop}px)`,
 		},

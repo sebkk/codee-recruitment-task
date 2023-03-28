@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { ListItem, Input } from '@/components'
 import LetterPicture from '@/pictures/LetterPicture.png'
 import SmallLetterPicture from '@/pictures/SmallLetterPicture.png'
+import { SECTIONS_IDS } from '@/constants/Navbar.constants'
 
 const Container = styled.article`
 	background-color: ${({ theme }) => theme.colors.black};
@@ -30,7 +31,7 @@ const HeadingsWrapper = styled.section`
 `
 
 const FormWrapper = styled.section`
-	padding: 80px 0;
+	padding: 50px 0;
 	flex: 1;
 
 	> p {
@@ -41,8 +42,15 @@ const FormWrapper = styled.section`
 	> li {
 		list-style: none;
 		color: #acacac;
-		font-size: 20px;
-		margin: 45px 0 0;
+	}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		padding: 80px 0;
+
+		> li {
+			font-size: 20px;
+			margin: 45px 0 0;
+		}
 	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
@@ -67,8 +75,13 @@ const FormWrapper = styled.section`
 `
 
 const HeadingsHeader = styled.h3`
-	font-size: 27px;
-	margin: 0 0 27px;
+	font-size: 22px;
+	margin: 0 0 22px;
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
+		font-size: 27px;
+		margin: 0 0 27px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 		font-size: 34px;
@@ -101,7 +114,7 @@ const SmallLetter = styled(Image)`
 `
 
 const ListOfHeadings = () => (
-	<Container>
+	<Container id={SECTIONS_IDS.LIST_OF_HEADINGS}>
 		<HeadingsWrapper>
 			<FormWrapper>
 				<HeadingsHeader>Request a list of headings</HeadingsHeader>

@@ -5,7 +5,7 @@ const TabsStyled = styled.aside`
 `
 
 const TabButton = styled.button`
-	padding: 16px 30px;
+	padding: 11px;
 	background-color: ${({ theme }) => theme.colors.white};
 	border: #707070 1px solid;
 	cursor: pointer;
@@ -36,6 +36,10 @@ const TabButton = styled.button`
 			background: ${({ theme }) => theme.colors.black};
 			color: ${({ theme }) => theme.colors.white};
 		`}
+
+	@media ${({ theme }) => theme.breakpoints.devices.mobileM} {
+		padding: 16px 30px;
+	}
 
 	@media ${({ theme }) => theme.breakpoints.devices.tablet} {
 		padding: 16px 60px;
