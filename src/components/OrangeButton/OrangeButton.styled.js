@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ButtonStyled = styled.button`
 	cursor: pointer;
-	background-color: #f46632;
+	background-color: ${({ theme }) => theme.colors.orange};
 	padding: ${({ padding }) => padding || '20px 30px'};
 	color: ${({ theme }) => theme.colors.white};
 	border-radius: 16px;

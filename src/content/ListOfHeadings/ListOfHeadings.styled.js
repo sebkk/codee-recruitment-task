@@ -25,7 +25,7 @@ export const HeadingsWrapper = styled.section`
 	}
 `
 
-export const FormWrapper = styled.section`
+export const FormWrapper = styled.form`
 	padding: 50px 0;
 	flex: 1;
 
@@ -108,4 +108,16 @@ export const PictureWrapper = styled.figure`
 
 export const SmallLetter = styled(Image)`
 	position: absolute;
+`
+
+export const ButtonWrapper = styled.div`
+	margin-top: 30px;
+`
+
+export const ErrorMessage = styled.span`
+	color: red;
+	opacity: 0.8;
+	font-size: 19px;
+	margin-top: 30px;
+	display: block;
 `
