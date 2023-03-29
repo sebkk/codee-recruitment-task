@@ -8,7 +8,7 @@ export const Item = styled.li`
 	margin: ${({ margin }) => margin || '25px 0 0'};
 
 	@media ${({ theme }) => theme.breakpoints.devices.desktop} {
-		font-size: 16px;
+		font-size: 17px;
 		line-height: 30px;
 		margin: ${({ margin }) => margin || '45px 0 0'};
 	}
@@ -27,7 +27,7 @@ export const Item = styled.li`
 
 		@media ${({ theme }) => theme.breakpoints.devices.desktop} {
 			top: 0;
-			translate: 0 30%;
+			translate: 0 20%;
 			width: 27px;
 			height: 27px;
 		}
