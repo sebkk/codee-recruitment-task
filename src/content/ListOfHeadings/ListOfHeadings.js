@@ -18,7 +18,8 @@ import {
 import { useListOfHeadingForm } from './ListOfHeadings.logic'
 
 const ListOfHeadings = () => {
-	const { initialValues, validationSchema, onSubmit } = useListOfHeadingForm()
+	const { initialValues, validationSchema, onSubmit, isSubmitted } =
+		useListOfHeadingForm()
 
 	return (
 		<Container id={SECTIONS_IDS.LIST_OF_HEADINGS}>
@@ -41,10 +42,12 @@ const ListOfHeadings = () => {
 									name='email'
 									type='email'
 								/>
-								<ListItem>
-									Your email has been successfully registered, headlines will be
-									sent to you soon.
-								</ListItem>
+								{isSubmitted && (
+									<ListItem>
+										Your email has been successfully registered, headlines will
+										be sent to you soon.
+									</ListItem>
+								)}
 								<ButtonWrapper>
 									<OrangeButton
 										disabled={!isValid}

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import * as yup from 'yup'
 
 const initialValues = {
@@ -5,6 +6,8 @@ const initialValues = {
 }
 
 export const useListOfHeadingForm = () => {
+	const [isSubmitted, setIsSubmitted] = useState(false)
+
 	const validationSchema = yup.object({
 		email: yup
 			.string()
@@ -16,9 +19,10 @@ export const useListOfHeadingForm = () => {
 
 	const onSubmit = (values, { resetForm }) => {
 		console.log('EMAIL SENT!', values)
+		setIsSubmitted(true)
 
 		resetForm()
 	}
 
-	return { initialValues, validationSchema, onSubmit }
+	return { initialValues, validationSchema, onSubmit, isSubmitted }
 }
