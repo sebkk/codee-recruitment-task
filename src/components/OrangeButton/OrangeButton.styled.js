@@ -10,6 +10,13 @@ export const ButtonStyled = styled.button`
 	font-size: ${({ fontSize }) => fontSize || '14px'};
 	font-weight: bold;
 
+	:disabled {
+		color: ${({ theme }) => theme.colors.black};
+		background: ${({ theme }) => theme.colors.gray};
+		opacity: 0.1;
+		pointer-events: none;
+	}
+
 	@media ${({ theme }) => theme.breakpoints.devices.mobileL} {
 		padding: ${({ padding }) => padding || '20px 60px'};
 		font-size: ${({ fontSize }) => fontSize || '18px'};

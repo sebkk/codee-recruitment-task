@@ -1,10 +1,10 @@
 import Image from 'next/image'
+import { Formik, Form } from 'formik'
 
 import { ListItem, Input, OrangeButton } from '@/components'
 import LetterPicture from '@/pictures/LetterPicture.png'
 import SmallLetterPicture from '@/pictures/SmallLetterPicture.png'
 import { SECTIONS_IDS } from '@/constants/Navbar.constants'
-import { useEmailInput } from '@/hooks'
 
 import {
 	Container,
@@ -15,14 +15,10 @@ import {
 	SmallLetter,
 	ButtonWrapper,
 } from './ListOfHeadings.styled'
+import { useListOfHeadingForm } from './ListOfHeadings.logic'
 
 const ListOfHeadings = () => {
-	const { value, onEmailChange, onBlurChange, isSubmitted } = useEmailInput()
-
-	const onSubmit = e => {
-		e.preventDefault()
-		onEmailChange(e, '')
-	}
+	const { initialValues, validationSchema, onSubmit } = useListOfHeadingForm()
 
 	return (
 		<Container id={SECTIONS_IDS.LIST_OF_HEADINGS}>
@@ -33,28 +29,32 @@ const ListOfHeadings = () => {
 						Please enter your email address to receive course titles, the topics
 						will be emailed to you.
 					</p>
-					<Input
-						value={value}
-						onChange={onEmailChange}
-						placeholder='Type your email'
-						onFocus={onBlurChange}
-						name='email'
-						type='email'
-						required
-						minLength='5'
-						maxLength='50'
-					/>
-					{isSubmitted && (
-						<ListItem>
-							Your email has been successfully registered, headlines will be
-							sent to you soon.
-						</ListItem>
-					)}
-					{!isSubmitted && (
-						<ButtonWrapper>
-							<OrangeButton onClick={onSubmit} type='submit' text='Register' />
-						</ButtonWrapper>
-					)}
+					<Formik
+						initialValues={initialValues}
+						validationSchema={validationSchema}
+						onSubmit={onSubmit}
+					>
+						{({ isValid }) => (
+							<Form>
+								<Input
+									placeholder='Type your email'
+									name='email'
+									type='email'
+								/>
+								<ListItem>
+									Your email has been successfully registered, headlines will be
+									sent to you soon.
+								</ListItem>
+								<ButtonWrapper>
+									<OrangeButton
+										disabled={!isValid}
+										type='submit'
+										text='Register'
+									/>
+								</ButtonWrapper>
+							</Form>
+						)}
+					</Formik>
 				</FormWrapper>
 				<PictureWrapper picture={LetterPicture}>
 					<Image src={LetterPicture} alt='letter' />

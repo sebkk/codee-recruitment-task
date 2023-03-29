@@ -24,3 +24,11 @@ export const StyledInput = styled.input`
 		}
 	}
 `
+
+export const ErrorMessage = styled.span`
+	color: red;
+	opacity: 0.7;
+	font-size: 18px;
+	margin-top: 30px;
+	display: block;
+`

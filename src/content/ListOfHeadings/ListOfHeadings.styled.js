@@ -25,7 +25,7 @@ export const HeadingsWrapper = styled.section`
 	}
 `
 
-export const FormWrapper = styled.form`
+export const FormWrapper = styled.section`
 	padding: 50px 0;
 	flex: 1;
 
@@ -34,7 +34,7 @@ export const FormWrapper = styled.form`
 		font-size: 15px;
 	}
 
-	> li {
+	> form > li {
 		list-style: none;
 		color: #acacac;
 	}
@@ -112,12 +112,4 @@ export const SmallLetter = styled(Image)`
 
 export const ButtonWrapper = styled.div`
 	margin-top: 30px;
-`
-
-export const ErrorMessage = styled.span`
-	color: red;
-	opacity: 0.8;
-	font-size: 19px;
-	margin-top: 30px;
-	display: block;
 `

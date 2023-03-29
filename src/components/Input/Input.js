@@ -1,5 +1,16 @@
-import { StyledInput } from './Input.styled'
+import { useField } from 'formik'
 
-const Input = ({ ...props }) => <StyledInput {...props} />
+import { StyledInput, ErrorMessage } from './Input.styled'
+
+const Input = ({ name, ...rest }) => {
+	const [field, meta] = useField(name)
+
+	return (
+		<>
+			<StyledInput {...field} {...rest} />
+			{meta.touched && meta.error && <ErrorMessage>{meta.error}</ErrorMessage>}
+		</>
+	)
+}
 
 export default Input
